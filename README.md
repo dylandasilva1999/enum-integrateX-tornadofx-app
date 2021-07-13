@@ -1,10 +1,10 @@
 <!-- PROJECT LOGO -->
 <br />
 
-![GitHub repo size](https://img.shields.io/github/repo-size/dylandasilva1999/babble-chat-app?color=%232f296a)
-![GitHub watchers](https://img.shields.io/github/watchers/dylandasilva1999/babble-chat-app?color=%232f296a)
-![GitHub language count](https://img.shields.io/github/languages/count/dylandasilva1999/babble-chat-app?color=%232f296a)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dylandasilva1999/babble-chat-app?color=%232f296a)
+![GitHub repo size](https://img.shields.io/github/repo-size/dylandasilva1999/babble-chat-app?color=%23EFA25E)
+![GitHub watchers](https://img.shields.io/github/watchers/dylandasilva1999/babble-chat-app?color=%23EFA25E)
+![GitHub language count](https://img.shields.io/github/languages/count/dylandasilva1999/babble-chat-app?color=%23EFA25E)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dylandasilva1999/babble-chat-app?color=%23EFA25E)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <h6 align="center">Dylan da Silva IDV 303</h6>
@@ -128,7 +128,6 @@ The `Conceptual Process` is the set of actions, activities and research that was
 ### Ideation
 
 <!--![image5][image5]-->
-<br>
 <!--![image6][image6]-->
 
 ### Wireframes
@@ -166,7 +165,6 @@ Future developments will be listed here in the near future.
 ## Mockups
 
 <!--![image9][image9]-->
-<br>
 <!--![image10][image10]-->
 
 <!-- VIDEO DEMONSTRATION -->
