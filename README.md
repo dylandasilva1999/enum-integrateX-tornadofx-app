@@ -216,7 +216,7 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* [My lecturer Christof Enslin]
+* My lecturer Christof Enslin
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!--[image1]: Images/Image1.png-->
