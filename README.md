@@ -1,17 +1,17 @@
 <!-- PROJECT LOGO -->
 <br />
 
-![GitHub repo size](https://img.shields.io/github/repo-size/dylandasilva1999/babble-chat-app?color=%23EFA25E)
-![GitHub watchers](https://img.shields.io/github/watchers/dylandasilva1999/babble-chat-app?color=%23EFA25E)
-![GitHub language count](https://img.shields.io/github/languages/count/dylandasilva1999/babble-chat-app?color=%23EFA25E)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dylandasilva1999/babble-chat-app?color=%23EFA25E)
+![GitHub repo size](https://img.shields.io/github/repo-size/dylandasilva1999/enum-integrateX-tornadofx-app?color=%23EFA25E)
+![GitHub watchers](https://img.shields.io/github/watchers/dylandasilva1999/enum-integrateX-tornadofx-app?color=%23EFA25E)
+![GitHub language count](https://img.shields.io/github/languages/count/dylandasilva1999/enum-integrateX-tornadofx-app?color=%23EFA25E)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dylandasilva1999/enum-integrateX-tornadofx-app?color=%23EFA25E)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <h6 align="center">Dylan da Silva IDV 303</h6>
 <p align="center">
 </br>
    
-  <a href="https://github.com/dylandasilva1999/enum-integrateX">
+  <a href="https://github.com/dylandasilva1999/enum-integrateX-tornadofx-app">
     <img src="Images/App Icon.png" alt="Logo" width="140" height="140">
   </a>
   
@@ -19,14 +19,14 @@
 
   <p align="center">
     University Administration Tool <br>
-      <a href="https://github.com/dylandasilva1999/enum-integrateX"><strong>Explore the docs »</strong></a>
+      <a href="https://github.com/dylandasilva1999/enum-integrateX-tornadofx-app"><strong>Explore the docs »</strong></a>
    <br />
    <br />
    <a href="">View Demo</a>
     ·
-    <a href="https://github.com/dylandasilva1999/enum-integrateX/issues">Report Bug</a>
+    <a href="https://github.com/dylandasilva1999/enum-integrateX-tornadofx-app/issues">Report Bug</a>
     ·
-    <a href="https://github.com/dylandasilva1999/enum-integrateX/issues">Request Feature</a>
+    <a href="https://github.com/dylandasilva1999/enum-integrateX-tornadofx-app/issues">Request Feature</a>
   </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -93,7 +93,7 @@ Here are a couple of ways to clone this repo:
 
 1. Clone the repo
 ```sh
-git clone https:://github.com/dylandasilva1999/enum-integrateX.git
+git clone https:://github.com/dylandasilva1999/enum-integrateX-tornadofx-app.git
 ```
 2. Open the project
 
@@ -184,7 +184,7 @@ To see the promo video, click below:
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/dylandasilva1999/enum-integrateX/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/dylandasilva1999/enum-integrateX-tornadofx-app/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
