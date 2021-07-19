@@ -67,7 +67,7 @@ Based on personal experience with interacting with university administration sys
 
 The importance of the role of administration according to an article by Pankaj Mishra, states that it is essentially the “backbone of an organization” (2014). They provide “motivation to the work force and make them realize the goals of the organization” (2014). The system needs to be as efficient and effective, but also functional in a manner that is super easy to understand.
 
-Enum IntegrateX is a tool that to aid the management of university administration. Making the work force of the admins more efficient and effective.
+Enum IntegrateX is a tool that aids the management of university administration. Making the workforce of the admins more efficient and effective.
 
 ### Built With
 
@@ -93,7 +93,7 @@ Here are a couple of ways to clone this repo:
 
 1. Clone the repo
 ```sh
-git clone https:://github.com/CarmenSeesink/EliteBankTornado.git
+git clone https:://github.com/dylandasilva1999/enum-integrateX.git
 ```
 2. Open the project
 
