@@ -1,16 +1,41 @@
 package com.example.demo.view
 
 import com.example.demo.app.Styles
+import com.example.demo.controller.LoginController
+import com.example.demo.model.User
+import com.example.demo.model.UserModel
 import javafx.geometry.Orientation
 import javafx.geometry.Pos
+import javafx.scene.control.Alert
 import javafx.scene.paint.Color
+import javafx.scene.control.Button
 import javafx.scene.text.FontWeight
 import tornadofx.*
 import java.io.File
 
 class LoginView : View("Login View") {
-    val mainController: MainController by inject()
 
+    //Instance of loginController
+    val loginController: LoginController by inject()
+
+    //Model instance for a User
+    val model = UserModel(User())
+
+    //Sign In Function
+    private fun Button.signIn() {
+        if (model.commit()) {
+            runAsync {
+                loginController.loginCheck(model.user)
+            } ui { success ->
+                if (success)
+                    replaceWith<DashboardView>()
+                else
+                    alert(Alert.AlertType.WARNING, "Sign In Unsuccessful", "Incorrect Credentials")
+            }
+        }
+    }
+
+    //Root Layout
     override val root = vbox {
         Form().addClass(Styles.login)
         style {
@@ -56,39 +81,48 @@ class LoginView : View("Login View") {
                         }
                         fieldset {
                             labelPosition = Orientation.VERTICAL
-                            field ("Username") {
-                                textfield {
+                            field("Username") {
+                                textfield(model.username) {
                                     style {
                                         textFill = Styles.darkBlueColor
-                                        backgroundColor = multi(Styles.mutedOrangeColor, Styles.mutedOrangeColor, Styles.mutedOrangeColor)
+                                        backgroundColor = multi(
+                                            Styles.mutedOrangeColor,
+                                            Styles.mutedOrangeColor,
+                                            Styles.mutedOrangeColor
+                                        )
                                         padding = box(15.px)
                                         borderWidth += box(1.5.px)
                                         backgroundRadius += box(9.px)
                                         borderRadius += box(9.px)
                                         borderColor += box(Styles.mutedOrangeColor)
                                     }
-                                }
+                                }.required(message = "Please enter your username")
                             }
-                            field ("Password") {
-                                passwordfield {
+                            field("Password") {
+                                passwordfield(model.password) {
                                     style {
                                         textFill = Styles.darkBlueColor
-                                        backgroundColor = multi(Styles.mutedOrangeColor, Styles.mutedOrangeColor, Styles.mutedOrangeColor)
+                                        backgroundColor = multi(
+                                            Styles.mutedOrangeColor,
+                                            Styles.mutedOrangeColor,
+                                            Styles.mutedOrangeColor
+                                        )
                                         padding = box(15.px)
                                         borderWidth += box(1.5.px)
                                         backgroundRadius += box(9.px)
                                         borderRadius += box(9.px)
                                         borderColor += box(Styles.mutedOrangeColor)
                                     }
-                                }
+                                }.required(message = "Please enter your password")
                             }
                         }
-                        button ("Sign In"){
+                        button("Sign In") {
+                            action {
+                                signIn()
+                            }
                             vboxConstraints {
                                 marginTop = 20.0
                             }
-                            useMaxWidth = true
-                            paddingAll = 15.0
                             style {
                                 fontSize = 20.px
                                 borderWidth += box(1.5.px)
@@ -96,11 +130,10 @@ class LoginView : View("Login View") {
                                 fontFamily = "Source Sans Pro"
                                 fontWeight = FontWeight.BOLD
                                 textFill = Color.WHITE
-                                backgroundColor += Styles.orangeColor
+                                backgroundColor = multi(Styles.orangeColor, Styles.orangeColor, Styles.orangeColor)
                             }
-                            action {
-
-                            }
+                            useMaxWidth = true
+                            paddingAll = 15.0
                         }
                     }
                 }

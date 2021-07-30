@@ -9,7 +9,6 @@ class Styles : Stylesheet() {
         val heading by cssclass()
 
         val login by cssclass()
-        val loginWidth = 300.px
 
         val orangeColor = c("#FF5D3C", 1.0)
         val mutedOrangeColor = c("#FFDCD4", 1.0)
@@ -21,14 +20,6 @@ class Styles : Stylesheet() {
             padding = box(10.px)
             fontSize = 20.px
             fontWeight = FontWeight.BOLD
-        }
-
-        form and login {
-            padding = box(25.px)
-            fontSize = 20.px
-            fontWeight = FontWeight.BOLD
-            prefWidth = loginWidth
-            button{ prefWidth = loginWidth }
         }
     }
 }
