@@ -74,7 +74,7 @@ class StudentsView : View("Students View") {
                             fontWeight = FontWeight.BOLD
                             textFill = Color.WHITE
                             backgroundColor =
-                                multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
+                                multi(Color.TRANSPARENT, Color.TRANSPARENT, Color.TRANSPARENT)
                         }
                         paddingAll = 15.0
                         paddingLeft = 40.0
@@ -100,7 +100,7 @@ class StudentsView : View("Students View") {
                             fontFamily = "Source Sans Pro"
                             fontWeight = FontWeight.BOLD
                             textFill = Color.WHITE
-                            backgroundColor = multi(Color.TRANSPARENT, Color.TRANSPARENT, Color.TRANSPARENT)
+                            backgroundColor = multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
                         }
                         paddingAll = 12.0
                         paddingLeft = 34.0
@@ -159,7 +159,7 @@ class StudentsView : View("Students View") {
                     }
                     button("Funds") {
                         action {
-                            replaceWith<StudentsView>()
+                            replaceWith<FundsView>()
                         }
                         vboxConstraints {
                             marginTop = 10.0

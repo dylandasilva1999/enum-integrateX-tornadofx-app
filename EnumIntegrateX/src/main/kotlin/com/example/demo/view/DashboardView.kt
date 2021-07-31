@@ -158,7 +158,7 @@ class DashboardView : View("Dashboard View") {
                     }
                     button("Funds") {
                         action {
-                            replaceWith<StudentsView>()
+                            replaceWith<FundsView>()
                         }
                         vboxConstraints {
                             marginTop = 10.0
