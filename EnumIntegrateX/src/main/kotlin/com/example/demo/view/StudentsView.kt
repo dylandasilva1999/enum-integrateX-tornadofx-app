@@ -2,16 +2,16 @@ package com.example.demo.view
 
 import com.example.demo.app.Styles
 import com.example.demo.controller.DashboardController
+import com.example.demo.controller.StudentsController
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*
-import java.io.File
 
-class DashboardView : View("Dashboard View") {
+class StudentsView : View("Students View") {
 
-    //Instance of dashboardController
-    val dashboardController: DashboardController by inject()
+    //Instance of studentsController
+    val studentsController: StudentsController by inject()
 
     //Root Layout
     override val root = hbox {
@@ -73,7 +73,8 @@ class DashboardView : View("Dashboard View") {
                             fontFamily = "Source Sans Pro"
                             fontWeight = FontWeight.BOLD
                             textFill = Color.WHITE
-                            backgroundColor = multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
+                            backgroundColor =
+                                multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
                         }
                         paddingAll = 15.0
                         paddingLeft = 40.0

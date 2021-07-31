@@ -11,6 +11,9 @@ class Styles : Stylesheet() {
         val login by cssclass()
 
         val orangeColor = c("#FF5D3C", 1.0)
+        val yellowColor = c("#EFA25E", 1.0)
+        val blueColor = c("#009DB8", 1.0)
+        val mutedDarkBlueColor = c("#252331", 1.0)
         val mutedOrangeColor = c("#FFDCD4", 1.0)
         val darkBlueColor = c("#171521", 1.0)
     }
