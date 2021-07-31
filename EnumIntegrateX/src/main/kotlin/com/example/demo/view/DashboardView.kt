@@ -263,7 +263,7 @@ class DashboardView : View("Dashboard View") {
             stackpane {
                 rectangle {
                     arcHeight = 90.0
-                    arcWidth = 9Dylan0.0
+                    arcWidth = 90.0
                     width = 1480.0
                     height = 920.0
                     strokeWidth = 1.0
