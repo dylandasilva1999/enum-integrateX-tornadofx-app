@@ -254,5 +254,24 @@ class DashboardView : View("Dashboard View") {
                 }
             }
         }
+        vbox {
+            vboxConstraints {
+                alignment = Pos.CENTER_RIGHT
+            }
+            useMaxHeight = true
+            useMaxWidth = true
+            stackpane {
+                rectangle {
+                    arcHeight = 90.0
+                    arcWidth = 9Dylan0.0
+                    width = 1480.0
+                    height = 920.0
+                    strokeWidth = 1.0
+                    fill = Styles.darkBlueColor
+                    opacity = 1.0
+                }
+            }
+            paddingAll = 50.0
+        }
     }
 }
