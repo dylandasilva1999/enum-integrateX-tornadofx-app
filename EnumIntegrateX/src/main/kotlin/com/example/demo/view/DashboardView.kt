@@ -1,12 +1,11 @@
 package com.example.demo.view
 
 import com.example.demo.app.Styles
-import com.example.demo.controller.DashboardController
+import com.example.demo.controller.dashboard.DashboardController
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*
-import java.io.File
 
 class DashboardView : View("Dashboard View") {
 
@@ -19,6 +18,8 @@ class DashboardView : View("Dashboard View") {
             backgroundColor = multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
         }
         setPrefSize(1920.0, 1080.0)
+
+        //Side Bar Menu
         hbox {
             hboxConstraints {
                 alignment = Pos.BASELINE_LEFT
@@ -73,7 +74,8 @@ class DashboardView : View("Dashboard View") {
                             fontFamily = "Source Sans Pro"
                             fontWeight = FontWeight.BOLD
                             textFill = Color.WHITE
-                            backgroundColor = multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
+                            backgroundColor =
+                                multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
                         }
                         paddingAll = 15.0
                         paddingLeft = 40.0

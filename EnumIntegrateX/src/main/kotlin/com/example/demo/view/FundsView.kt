@@ -1,10 +1,7 @@
 package com.example.demo.view
 
 import com.example.demo.app.Styles
-import com.example.demo.controller.FundsController
-import com.example.demo.controller.StaffController
-import com.example.demo.controller.StudentsController
-import com.example.demo.controller.SubjectsController
+import com.example.demo.controller.funds.FundsController
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight

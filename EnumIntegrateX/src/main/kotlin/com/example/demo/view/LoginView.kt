@@ -1,7 +1,7 @@
 package com.example.demo.view
 
 import com.example.demo.app.Styles
-import com.example.demo.controller.LoginController
+import com.example.demo.controller.login.LoginController
 import com.example.demo.model.User
 import com.example.demo.model.UserModel
 import javafx.geometry.Orientation
