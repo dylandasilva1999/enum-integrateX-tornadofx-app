@@ -1,5 +1,6 @@
 package com.example.demo.model
 
+import com.example.demo.controller.students.StudentsController
 import javafx.beans.property.SimpleDoubleProperty
 import javafx.beans.property.SimpleIntegerProperty
 import javafx.beans.property.SimpleStringProperty

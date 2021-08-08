@@ -2,6 +2,12 @@ package com.example.demo.view
 
 import com.example.demo.app.Styles
 import com.example.demo.controller.dashboard.DashboardController
+import com.example.demo.controller.staff.AdminStaffController
+import com.example.demo.controller.students.StudentsController
+import com.example.demo.model.AdminStaffModel
+import com.example.demo.model.Student
+import com.example.demo.model.StudentModel
+import com.example.demo.view.adminListDashbooard.AdminListDashboardView
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
@@ -11,6 +17,21 @@ class DashboardView : View("Dashboard View") {
 
     //Instance of dashboardController
     val dashboardController: DashboardController by inject()
+
+    //Instance of studentsController
+    val studentsController: StudentsController by inject()
+    //Students List
+    val students = studentsController.studentsList
+
+    //Instance of adminStaffController
+    val adminStaffController: AdminStaffController by inject()
+    //AdminStaff List
+    val adminStaffList = adminStaffController.adminStaffList
+
+
+
+    //Admin staff
+    val adminStaff: AdminStaffModel by inject()
 
     //Root Layout
     override val root = hbox {
@@ -298,7 +319,7 @@ class DashboardView : View("Dashboard View") {
                             fontFamily = "Source Sans Pro"
                         }
                     }
-                    hbox {
+                    hbox() {
                         hboxConstraints {
                             paddingLeft = 70.0
                             paddingTop = 30.0
@@ -323,7 +344,7 @@ class DashboardView : View("Dashboard View") {
                                     fitWidth = 55.0
                                     isPreserveRatio = true
                                 }
-                                label("10") {
+                                label(dashboardController.getTotalDiplomaStudents()) {
                                     vboxConstraints {
                                         marginLeft = 45.0
                                     }
@@ -371,7 +392,7 @@ class DashboardView : View("Dashboard View") {
                                     fitWidth = 55.0
                                     isPreserveRatio = true
                                 }
-                                label("5") {
+                                label(dashboardController.getTotalDegreeStudents()) {
                                     vboxConstraints {
                                         marginLeft = 45.0
                                     }
@@ -419,7 +440,7 @@ class DashboardView : View("Dashboard View") {
                                     fitWidth = 55.0
                                     isPreserveRatio = true
                                 }
-                                label("8") {
+                                label(dashboardController.getTotalAdminStaff()) {
                                     vboxConstraints {
                                         marginLeft = 45.0
                                     }
@@ -467,7 +488,7 @@ class DashboardView : View("Dashboard View") {
                                     fitWidth = 55.0
                                     isPreserveRatio = true
                                 }
-                                label("3") {
+                                label(dashboardController.getTotalAcademicStaff()) {
                                     vboxConstraints {
                                         marginLeft = 45.0
                                     }
@@ -522,7 +543,7 @@ class DashboardView : View("Dashboard View") {
                                     opacity = 1.0
                                 }
                                 vbox {
-                                    label("Staff") {
+                                    label("Admin Staff") {
                                         vboxConstraints {
                                             marginTop = 30.0
                                             marginLeft = 45.0
@@ -535,122 +556,8 @@ class DashboardView : View("Dashboard View") {
                                         }
                                     }
                                     vbox {
-                                        hbox {
-                                            hboxConstraints {
-                                                paddingTop = 10.0
-                                            }
-                                            imageview("user-default-1.png") {
-                                                hboxConstraints {
-                                                    marginTop = 20.0
-                                                    marginLeft = 40.0
-                                                }
-                                                fitHeight = 65.0
-                                                fitWidth = 65.0
-                                                isPreserveRatio = true
-                                            }
-                                            vbox {
-                                                label("Lecturer") {
-                                                    vboxConstraints {
-                                                        marginTop = 30.0
-                                                        marginLeft = 20.0
-                                                    }
-                                                    style {
-                                                        fontWeight = FontWeight.NORMAL
-                                                        textFill = Color.WHITE
-                                                        fontSize = 16.px
-                                                        fontFamily = "Source Sans Pro"
-                                                    }
-                                                }
-                                                label("Adam Sandler") {
-                                                    vboxConstraints {
-                                                        marginLeft = 20.0
-                                                    }
-                                                    style {
-                                                        fontWeight = FontWeight.EXTRA_BOLD
-                                                        textFill = Color.WHITE
-                                                        fontSize = 18.px
-                                                        fontFamily = "Source Sans Pro"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        hbox {
-                                            hboxConstraints {
-                                                paddingTop = 10.0
-                                            }
-                                            imageview("user-default-2.png") {
-                                                hboxConstraints {
-                                                    marginTop = 20.0
-                                                    marginLeft = 40.0
-                                                }
-                                                fitHeight = 65.0
-                                                fitWidth = 65.0
-                                                isPreserveRatio = true
-                                            }
-                                            vbox {
-                                                label("Lecturer") {
-                                                    vboxConstraints {
-                                                        marginTop = 30.0
-                                                        marginLeft = 20.0
-                                                    }
-                                                    style {
-                                                        fontWeight = FontWeight.NORMAL
-                                                        textFill = Color.WHITE
-                                                        fontSize = 16.px
-                                                        fontFamily = "Source Sans Pro"
-                                                    }
-                                                }
-                                                label("James Boil") {
-                                                    vboxConstraints {
-                                                        marginLeft = 20.0
-                                                    }
-                                                    style {
-                                                        fontWeight = FontWeight.EXTRA_BOLD
-                                                        textFill = Color.WHITE
-                                                        fontSize = 18.px
-                                                        fontFamily = "Source Sans Pro"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        hbox {
-                                            hboxConstraints {
-                                                paddingTop = 10.0
-                                            }
-                                            imageview("user-default-3.png") {
-                                                hboxConstraints {
-                                                    marginTop = 20.0
-                                                    marginLeft = 40.0
-                                                }
-                                                fitHeight = 65.0
-                                                fitWidth = 65.0
-                                                isPreserveRatio = true
-                                            }
-                                            vbox {
-                                                label("Lecturer") {
-                                                    vboxConstraints {
-                                                        marginTop = 30.0
-                                                        marginLeft = 20.0
-                                                    }
-                                                    style {
-                                                        fontWeight = FontWeight.NORMAL
-                                                        textFill = Color.WHITE
-                                                        fontSize = 16.px
-                                                        fontFamily = "Source Sans Pro"
-                                                    }
-                                                }
-                                                label("Nina Dobrev") {
-                                                    vboxConstraints {
-                                                        marginLeft = 20.0
-                                                    }
-                                                    style {
-                                                        fontWeight = FontWeight.EXTRA_BOLD
-                                                        textFill = Color.WHITE
-                                                        fontSize = 18.px
-                                                        fontFamily = "Source Sans Pro"
-                                                    }
-                                                }
-                                            }
+                                        for (adminStaff in adminStaffList) {
+                                            add(AdminListDashboardView(AdminStaffModel(adminStaff)))
                                         }
                                     }
                                 }

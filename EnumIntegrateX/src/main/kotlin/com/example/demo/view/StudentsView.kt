@@ -1,6 +1,8 @@
 package com.example.demo.view
 
 import com.example.demo.app.Styles
+import com.example.demo.controller.students.StudentsController
+import com.example.demo.view.searchbar.SearchBarView
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
@@ -10,6 +12,9 @@ class StudentsView : View("Students View") {
 
     //Instance of studentsController
     val studentsController: StudentsController by inject()
+
+    //SearchBarView
+    val searchBarView: SearchBarView by inject()
 
     //Root Layout
     override val root = hbox {
@@ -98,7 +103,8 @@ class StudentsView : View("Students View") {
                             fontFamily = "Source Sans Pro"
                             fontWeight = FontWeight.BOLD
                             textFill = Color.WHITE
-                            backgroundColor = multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
+                            backgroundColor =
+                                multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
                         }
                         paddingAll = 12.0
                         paddingLeft = 34.0
@@ -252,6 +258,66 @@ class StudentsView : View("Students View") {
                     }
                 }
             }
+        }
+        vbox {
+            hbox {
+                hboxConstraints {
+                    alignment = Pos.CENTER_LEFT
+                }
+                useMaxWidth = true
+                add(searchBarView)
+                button("+ Add a student") {
+                    hboxConstraints {
+                        marginLeft = 15.0
+                        marginBottom = 15.0
+                    }
+                    action {
+                        //Action here
+                    }
+                    style {
+                        fontSize = 20.px
+                        borderWidth += box(1.5.px)
+                        backgroundRadius += box(9.px)
+                        fontFamily = "Source Sans Pro"
+                        fontWeight = FontWeight.BOLD
+                        textFill = Color.WHITE
+                        backgroundColor = multi(Styles.blueColor, Styles.blueColor, Styles.blueColor)
+                    }
+                    useMaxWidth = true
+                    paddingAll = 15.0
+                }
+            }
+            vboxConstraints {
+                alignment = Pos.CENTER_LEFT
+            }
+            useMaxHeight = true
+            useMaxWidth = true
+            stackpane {
+                rectangle {
+                    width = 1480.0
+                    height = 840.0
+                    strokeWidth = 1.0
+                    fill = Color.TRANSPARENT
+                    opacity = 1.0
+                }
+                vbox {
+                    label("Students") {
+                        vboxConstraints {
+                            marginTop = 8.0
+                            marginLeft = 12.0
+                        }
+                        style {
+                            fontWeight = FontWeight.BOLD
+                            textFill = Color.WHITE
+                            fontSize = 36.px
+                            fontFamily = "Source Sans Pro"
+                        }
+                    }
+                }
+            }
+            paddingLeft = 50.0
+            paddingRight = 50.0
+            paddingBottom = 50.0
         }
     }
 }
