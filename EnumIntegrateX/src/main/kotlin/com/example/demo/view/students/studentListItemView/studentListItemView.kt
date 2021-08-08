@@ -81,7 +81,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                 label(studentModel.education) {
                     hboxConstraints {
                         marginTop = 40.0
-                        marginLeft = 80.0
+                        marginLeft = 140.0
                     }
                     style {
                         fontWeight = FontWeight.NORMAL
@@ -94,7 +94,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                 button("View Student Details") {
                     hboxConstraints {
                         marginTop = 30.0
-                        marginLeft = 70.0
+                        marginLeft = 180.0
                     }
                     action {
                         //Action here
@@ -110,29 +110,6 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                     }
                     useMaxWidth = true
                     paddingAll = 12.0
-                    paddingLeft = 30.0
-                    paddingRight = 30.0
-                }
-                button("Remove") {
-                    hboxConstraints {
-                        marginTop = 30.0
-                        marginLeft = 20.0
-                    }
-                    action {
-
-                    }
-                    style {
-                        fontSize = 20.px
-                        borderWidth += box(2.5.px)
-                        borderColor += box(Styles.yellowColor)
-                        borderRadius += box(9.px)
-                        fontFamily = "Source Sans Pro"
-                        fontWeight = FontWeight.BOLD
-                        textFill = Color.WHITE
-                        backgroundColor = multi(Color.TRANSPARENT, Color.TRANSPARENT, Color.TRANSPARENT)
-                    }
-                    useMaxWidth = true
-                    paddingAll = 10.0
                     paddingLeft = 30.0
                     paddingRight = 30.0
                 }
