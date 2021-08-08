@@ -39,7 +39,7 @@ class FundsView : View("Funds View") {
                 vbox {
                     imageview("side-bar-logo.png") {
                         vboxConstraints {
-                            marginTop = 20.0
+                            marginTop = 30.0
                             alignment = Pos.TOP_CENTER
                         }
                         fitHeight = 60.0
@@ -190,7 +190,7 @@ class FundsView : View("Funds View") {
                     vbox {
                         vboxConstraints {
                             alignment = Pos.BOTTOM_LEFT
-                            marginTop = 460.0
+                            marginTop = 440.0
                         }
                         label("YOUR ACCOUNT") {
                             vboxConstraints {

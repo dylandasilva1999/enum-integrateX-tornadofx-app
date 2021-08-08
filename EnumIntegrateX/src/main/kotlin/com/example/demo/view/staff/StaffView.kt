@@ -43,7 +43,7 @@ class StaffView : View("Staff View") {
                 vbox {
                     imageview("side-bar-logo.png") {
                         vboxConstraints {
-                            marginTop = 20.0
+                            marginTop = 30.0
                             alignment = Pos.TOP_CENTER
                         }
                         fitHeight = 60.0
@@ -194,7 +194,7 @@ class StaffView : View("Staff View") {
                     vbox {
                         vboxConstraints {
                             alignment = Pos.BOTTOM_LEFT
-                            marginTop = 460.0
+                            marginTop = 440.0
                         }
                         label("YOUR ACCOUNT") {
                             vboxConstraints {
@@ -342,7 +342,7 @@ class StaffView : View("Staff View") {
                     }
                 }
             }
-            paddingTop = 10.0
+            paddingTop = 5.0
             paddingLeft = 50.0
             paddingRight = 50.0
             paddingBottom = 50.0
