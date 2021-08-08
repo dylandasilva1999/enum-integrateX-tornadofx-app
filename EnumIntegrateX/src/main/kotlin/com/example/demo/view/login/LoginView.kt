@@ -1,9 +1,10 @@
-package com.example.demo.view
+package com.example.demo.view.login
 
 import com.example.demo.app.Styles
 import com.example.demo.controller.login.LoginController
 import com.example.demo.model.User
 import com.example.demo.model.UserModel
+import com.example.demo.view.dashboard.DashboardView
 import javafx.geometry.Orientation
 import javafx.geometry.Pos
 import javafx.scene.control.Alert

@@ -1,16 +1,20 @@
-package com.example.demo.view
+package com.example.demo.view.funds
 
 import com.example.demo.app.Styles
-import com.example.demo.controller.subjects.SubjectsController
+import com.example.demo.controller.funds.FundsController
+import com.example.demo.view.staff.StaffView
+import com.example.demo.view.students.StudentsView
+import com.example.demo.view.subjects.SubjectsView
+import com.example.demo.view.dashboard.DashboardView
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*
 
-class SubjectsView : View("Subjects View") {
+class FundsView : View("Funds View") {
 
-    //Instance of subjectsController
-    val subjectsController: SubjectsController by inject()
+    //Instance of fundsController
+    val fundsController: FundsController by inject()
 
     //Root Layout
     override val root = hbox {
@@ -125,7 +129,7 @@ class SubjectsView : View("Subjects View") {
                             fontFamily = "Source Sans Pro"
                             fontWeight = FontWeight.BOLD
                             textFill = Color.WHITE
-                            backgroundColor = multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
+                            backgroundColor = multi(Color.TRANSPARENT, Color.TRANSPARENT, Color.TRANSPARENT)
                         }
                         paddingAll = 12.0
                         paddingLeft = 38.0
@@ -177,7 +181,7 @@ class SubjectsView : View("Subjects View") {
                             fontFamily = "Source Sans Pro"
                             fontWeight = FontWeight.BOLD
                             textFill = Color.WHITE
-                            backgroundColor = multi(Color.TRANSPARENT, Color.TRANSPARENT, Color.TRANSPARENT)
+                            backgroundColor = multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
                         }
                         paddingAll = 12.0
                         paddingLeft = 38.0

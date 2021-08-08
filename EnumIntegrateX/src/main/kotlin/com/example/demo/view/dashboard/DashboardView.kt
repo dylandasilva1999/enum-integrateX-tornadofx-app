@@ -1,12 +1,14 @@
-package com.example.demo.view
+package com.example.demo.view.dashboard
 
 import com.example.demo.app.Styles
 import com.example.demo.controller.dashboard.DashboardController
 import com.example.demo.controller.staff.AdminStaffController
 import com.example.demo.controller.students.StudentsController
 import com.example.demo.model.AdminStaffModel
-import com.example.demo.model.Student
-import com.example.demo.model.StudentModel
+import com.example.demo.view.funds.FundsView
+import com.example.demo.view.staff.StaffView
+import com.example.demo.view.students.StudentsView
+import com.example.demo.view.subjects.SubjectsView
 import com.example.demo.view.adminListDashbooard.AdminListDashboardView
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
