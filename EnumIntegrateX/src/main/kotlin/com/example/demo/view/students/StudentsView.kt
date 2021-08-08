@@ -368,8 +368,27 @@ class StudentsView : View("Students View") {
                             fontFamily = "Source Sans Pro"
                         }
                     }
-                    for (student in studentList) {
-                        add(studentListItemView(StudentModel(student)))
+                    scrollpane {
+                        style {
+                            baseColor = Styles.mutedDarkBlueColor
+                            focusColor = Color.TRANSPARENT
+                            edgeToEdge = true
+                            pannable = true
+                        }
+                        borderpane {
+                            style {
+                                backgroundColor += Styles.mutedDarkBlueColor
+                            }
+                            center = vbox {
+                                vboxConstraints {
+                                    paddingLeft = 5.0
+                                }
+                                for (student in studentList) {
+                                    add(studentListItemView(StudentModel(student)))
+                                }
+                            }
+                        }
+                        prefHeight = 840.0
                     }
                 }
             }

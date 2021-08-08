@@ -10,5 +10,7 @@ class StudentsController: Controller() {
         Student("MRS","Katey Cairns", "student-3.png", "9806014800081", 50, "Degree", "CC, ID, MD", 45000),
         Student("MR","Jerome Meyers", "student-4.png", "9906205800088", 50, "Diploma", "CC, ID, MD", 22000),
         Student("MRS","Kayley Combs", "student-5.png", "9906204800089", 50, "Degree", "CC, ID, MD", 30000),
+        Student("MRS","Alyssia Cole", "student-6.png", "9624015600812", 50, "Degree", "CC, ID, MD", 45000),
+        Student("MR","Tom Talbot", "student-7.png", "9706225823088", 50, "Diploma", "CC, ID, MD", 22000),
     ).asObservable()
 }

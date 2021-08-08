@@ -21,7 +21,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                 arcHeight = 60.0
                 arcWidth = 60.0
                 width = 1460.0
-                height = 120.0
+                height = 110.0
                 strokeWidth = 1.0
                 fill = Styles.darkBlueColor
                 opacity = 1.0
@@ -29,16 +29,16 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
             hbox {
                 imageview(studentModel.image) {
                     hboxConstraints {
-                        marginTop = 15.0
-                        marginLeft = 28.0
+                        marginTop = 18.0
+                        marginLeft = 20.0
                     }
-                    fitHeight = 90.0
-                    fitWidth = 90.0
+                    fitHeight = 75.0
+                    fitWidth = 75.0
                     isPreserveRatio = true
                 }
                 label(studentModel.title) {
                     hboxConstraints {
-                        marginTop = 45.0
+                        marginTop = 40.0
                         marginLeft = 40.0
                     }
                     style {
@@ -51,7 +51,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                 }
                 label(studentModel.fullName) {
                     hboxConstraints {
-                        marginTop = 45.0
+                        marginTop = 40.0
                         marginLeft = 80.0
                     }
                     style {
@@ -64,7 +64,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                 }
                 label(studentModel.idNumber) {
                     hboxConstraints {
-                        marginTop = 45.0
+                        marginTop = 40.0
                         marginLeft = 50.0
                     }
                     style {
@@ -77,7 +77,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                 }
                 label(studentModel.education) {
                     hboxConstraints {
-                        marginTop = 45.0
+                        marginTop = 40.0
                         marginLeft = 80.0
                     }
                     style {
@@ -90,7 +90,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                 }
                 button("View Student Details") {
                     hboxConstraints {
-                        marginTop = 35.0
+                        marginTop = 30.0
                         marginLeft = 70.0
                     }
                     action {
@@ -112,7 +112,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                 }
                 button("Remove") {
                     hboxConstraints {
-                        marginTop = 35.0
+                        marginTop = 30.0
                         marginLeft = 20.0
                     }
                     action {
