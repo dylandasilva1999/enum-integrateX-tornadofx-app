@@ -9,7 +9,8 @@ import com.example.demo.view.funds.FundsView
 import com.example.demo.view.staff.StaffView
 import com.example.demo.view.students.StudentsView
 import com.example.demo.view.subjects.SubjectsView
-import com.example.demo.view.adminListDashbooard.AdminListDashboardView
+import com.example.demo.view.dashboard.adminListDashbooard.AdminListDashboardView
+import com.example.demo.view.login.LoginView
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
@@ -210,7 +211,7 @@ class DashboardView : View("Dashboard View") {
                     vbox {
                         vboxConstraints {
                             alignment = Pos.BOTTOM_LEFT
-                            marginTop = 470.0
+                            marginTop = 400.0
                         }
                         label("YOUR ACCOUNT") {
                             vboxConstraints {
@@ -275,10 +276,32 @@ class DashboardView : View("Dashboard View") {
                                 }
                             }
                         }
+                        button("Sign out") {
+                            vboxConstraints {
+                                marginLeft = 55.0
+                                marginTop = 20.0
+                                marginRight = 55.0
+                            }
+                            action {
+                                replaceWith<LoginView>()
+                            }
+                            style {
+                                fontSize = 20.px
+                                borderWidth += box(2.5.px)
+                                backgroundRadius += box(9.px)
+                                fontFamily = "Source Sans Pro"
+                                fontWeight = FontWeight.BOLD
+                                textFill = Color.WHITE
+                                backgroundColor = multi(Styles.yellowColor, Styles.yellowColor, Styles.yellowColor)
+                            }
+                            useMaxWidth = true
+                            paddingAll = 15.0
+                        }
                     }
                 }
             }
         }
+        //Main Content Section (Right Side)
         vbox {
             vboxConstraints {
                 alignment = Pos.CENTER_RIGHT
@@ -558,8 +581,12 @@ class DashboardView : View("Dashboard View") {
                                         }
                                     }
                                     vbox {
+                                        var i: Int = 0
                                         for (adminStaff in adminStaffList) {
-                                            add(AdminListDashboardView(AdminStaffModel(adminStaff)))
+                                            if(i < 3) {
+                                                add(AdminListDashboardView(AdminStaffModel(adminStaff)))
+                                                i++
+                                            }
                                         }
                                     }
                                 }

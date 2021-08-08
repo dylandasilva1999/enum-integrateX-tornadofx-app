@@ -1,4 +1,4 @@
-package com.example.demo.view.adminListDashbooard
+package com.example.demo.view.dashboard.adminListDashbooard
 
 import com.example.demo.controller.dashboard.DashboardController
 import com.example.demo.model.AdminStaffModel

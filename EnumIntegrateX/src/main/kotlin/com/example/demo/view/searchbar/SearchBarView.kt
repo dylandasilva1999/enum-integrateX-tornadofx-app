@@ -42,7 +42,7 @@ class SearchBarView : View("Search Bar View") {
         button("Search") {
             hboxConstraints {
                 marginLeft = 10.0
-                marginTop = 20.0
+                marginTop = 17.0
             }
             action {
                 //Action here
