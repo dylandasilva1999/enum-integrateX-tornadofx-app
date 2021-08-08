@@ -30,9 +30,6 @@ class DashboardView : View("Dashboard View") {
     val adminStaffController: AdminStaffController by inject()
     //AdminStaff List
     val adminStaffList = adminStaffController.adminStaffList
-
-
-
     //Admin staff
     val adminStaff: AdminStaffModel by inject()
 

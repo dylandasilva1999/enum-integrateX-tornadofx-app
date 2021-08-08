@@ -167,7 +167,7 @@ class SubjectsView : View("Subjects View") {
                     }
                     button("Funds") {
                         action {
-                            find(SubjectsView::class).replaceWith(SubjectsView::class, sizeToScene = true, centerOnScreen = true)
+                            find(SubjectsView::class).replaceWith(FundsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0

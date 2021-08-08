@@ -1,13 +1,18 @@
 package com.example.demo.view.students
 
 import com.example.demo.app.Styles
+import com.example.demo.controller.staff.AdminStaffController
 import com.example.demo.controller.students.StudentsController
+import com.example.demo.model.AdminStaffModel
+import com.example.demo.model.StudentModel
 import com.example.demo.view.subjects.SubjectsView
 import com.example.demo.view.dashboard.DashboardView
+import com.example.demo.view.dashboard.adminListDashbooard.AdminListDashboardView
 import com.example.demo.view.funds.FundsView
 import com.example.demo.view.login.LoginView
 import com.example.demo.view.searchbar.SearchBarViewStudents
 import com.example.demo.view.staff.StaffView
+import com.example.demo.view.students.studentListItemView.studentListItemView
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
@@ -17,6 +22,10 @@ class StudentsView : View("Students View") {
 
     //Instance of studentsController
     val studentsController: StudentsController by inject()
+    //Student List
+    val studentList = studentsController.studentsList
+    //Students
+    val student: StudentModel by inject()
 
     //SearchBarView
     val searchBarViewStudents: SearchBarViewStudents by inject()
@@ -62,7 +71,11 @@ class StudentsView : View("Students View") {
                     }
                     button("Dashboard") {
                         action {
-                            find(StudentsView::class).replaceWith(DashboardView::class, sizeToScene = true, centerOnScreen = true)
+                            find(StudentsView::class).replaceWith(
+                                DashboardView::class,
+                                sizeToScene = true,
+                                centerOnScreen = true
+                            )
                         }
                         vboxConstraints {
                             marginTop = 20.0
@@ -89,7 +102,11 @@ class StudentsView : View("Students View") {
                     }
                     button("Students") {
                         action {
-                            find(StudentsView::class).replaceWith(StudentsView::class, sizeToScene = true, centerOnScreen = true)
+                            find(StudentsView::class).replaceWith(
+                                StudentsView::class,
+                                sizeToScene = true,
+                                centerOnScreen = true
+                            )
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -116,7 +133,11 @@ class StudentsView : View("Students View") {
                     }
                     button("Subjects") {
                         action {
-                            find(StudentsView::class).replaceWith(SubjectsView::class, sizeToScene = true, centerOnScreen = true)
+                            find(StudentsView::class).replaceWith(
+                                SubjectsView::class,
+                                sizeToScene = true,
+                                centerOnScreen = true
+                            )
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -142,7 +163,11 @@ class StudentsView : View("Students View") {
                     }
                     button("Staff") {
                         action {
-                            find(StudentsView::class).replaceWith(StaffView::class, sizeToScene = true, centerOnScreen = true)
+                            find(StudentsView::class).replaceWith(
+                                StaffView::class,
+                                sizeToScene = true,
+                                centerOnScreen = true
+                            )
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -168,7 +193,11 @@ class StudentsView : View("Students View") {
                     }
                     button("Funds") {
                         action {
-                            find(StudentsView::class).replaceWith(StudentsView::class, sizeToScene = true, centerOnScreen = true)
+                            find(StudentsView::class).replaceWith(
+                                FundsView::class,
+                                sizeToScene = true,
+                                centerOnScreen = true
+                            )
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -338,6 +367,9 @@ class StudentsView : View("Students View") {
                             fontSize = 36.px
                             fontFamily = "Source Sans Pro"
                         }
+                    }
+                    for (student in studentList) {
+                        add(studentListItemView(StudentModel(student)))
                     }
                 }
             }
