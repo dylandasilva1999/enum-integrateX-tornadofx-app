@@ -2,6 +2,7 @@ package com.example.demo.view.students.studentListItemView
 
 import com.example.demo.app.Styles
 import com.example.demo.controller.students.StudentsController
+import com.example.demo.model.Student
 import com.example.demo.model.StudentModel
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
@@ -11,6 +12,8 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
 
     //Instance of studentsController
     val studentsController: StudentsController by inject()
+    //Student List
+    val studentList = studentsController.studentsList
 
     override val root = vbox {
         stackpane {
@@ -116,7 +119,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                         marginLeft = 20.0
                     }
                     action {
-                        //Action here
+
                     }
                     style {
                         fontSize = 20.px

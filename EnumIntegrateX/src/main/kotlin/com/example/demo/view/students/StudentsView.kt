@@ -1,18 +1,18 @@
 package com.example.demo.view.students
 
 import com.example.demo.app.Styles
-import com.example.demo.controller.staff.AdminStaffController
 import com.example.demo.controller.students.StudentsController
-import com.example.demo.model.AdminStaffModel
+import com.example.demo.model.Student
 import com.example.demo.model.StudentModel
 import com.example.demo.view.subjects.SubjectsView
 import com.example.demo.view.dashboard.DashboardView
-import com.example.demo.view.dashboard.adminListDashbooard.AdminListDashboardView
 import com.example.demo.view.funds.FundsView
 import com.example.demo.view.login.LoginView
 import com.example.demo.view.searchbar.SearchBarViewStudents
 import com.example.demo.view.staff.StaffView
+import com.example.demo.view.students.studentEditorView.studentEditorView
 import com.example.demo.view.students.studentListItemView.studentListItemView
+import javafx.beans.property.SimpleObjectProperty
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
@@ -26,6 +26,7 @@ class StudentsView : View("Students View") {
     val studentList = studentsController.studentsList
     //Students
     val student: StudentModel by inject()
+    val selectedStudent = SimpleObjectProperty<Student>()
 
     //SearchBarView
     val searchBarViewStudents: SearchBarViewStudents by inject()
@@ -327,7 +328,7 @@ class StudentsView : View("Students View") {
                         marginBottom = 15.0
                     }
                     action {
-                        //Action here
+                        openInternalWindow<studentEditorView>()
                     }
                     style {
                         fontSize = 20.px
@@ -368,6 +369,32 @@ class StudentsView : View("Students View") {
                             fontFamily = "Source Sans Pro"
                         }
                     }
+                    scrollpane {
+                        style {
+                            baseColor = Styles.mutedDarkBlueColor
+                            focusColor = Color.TRANSPARENT
+                            edgeToEdge = true
+                            pannable = true
+                        }
+                        borderpane {
+                            style {
+                                backgroundColor += Styles.mutedDarkBlueColor
+                            }
+                            center = vbox {
+                                vboxConstraints {
+                                    paddingLeft = 5.0
+                                }
+                                for (student in studentList) {
+                                    add(studentListItemView(StudentModel(student)))
+                                }
+                            }
+                        }
+                        prefHeight = 840.0
+                    }
+                }
+                studentList.onChange {
+                    // Clear View
+                    this.clear()
                     scrollpane {
                         style {
                             baseColor = Styles.mutedDarkBlueColor
