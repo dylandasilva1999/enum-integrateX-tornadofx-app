@@ -5,6 +5,7 @@ import com.example.demo.controller.subjects.SubjectsController
 import com.example.demo.view.dashboard.DashboardView
 import com.example.demo.view.funds.FundsView
 import com.example.demo.view.login.LoginView
+import com.example.demo.view.searchbar.SearchBarViewSubjects
 import com.example.demo.view.staff.StaffView
 import com.example.demo.view.students.StudentsView
 import javafx.geometry.Pos
@@ -16,6 +17,9 @@ class SubjectsView : View("Subjects View") {
 
     //Instance of subjectsController
     val subjectsController: SubjectsController by inject()
+
+    //SearchBarView
+    val searchBarViewSubjects: SearchBarViewSubjects by inject()
 
     //Root Layout
     override val root = hbox {
@@ -58,7 +62,7 @@ class SubjectsView : View("Subjects View") {
                     }
                     button("Dashboard") {
                         action {
-                            replaceWith<DashboardView>()
+                            find(SubjectsView::class).replaceWith(DashboardView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 20.0
@@ -85,7 +89,7 @@ class SubjectsView : View("Subjects View") {
                     }
                     button("Students") {
                         action {
-                            replaceWith<StudentsView>()
+                            find(SubjectsView::class).replaceWith(StudentsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -111,7 +115,7 @@ class SubjectsView : View("Subjects View") {
                     }
                     button("Subjects") {
                         action {
-                            replaceWith<SubjectsView>()
+                            find(SubjectsView::class).replaceWith(SubjectsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -137,7 +141,7 @@ class SubjectsView : View("Subjects View") {
                     }
                     button("Staff") {
                         action {
-                            replaceWith<StaffView>()
+                            find(SubjectsView::class).replaceWith(StaffView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -163,7 +167,7 @@ class SubjectsView : View("Subjects View") {
                     }
                     button("Funds") {
                         action {
-                            replaceWith<FundsView>()
+                            find(SubjectsView::class).replaceWith(SubjectsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -190,7 +194,7 @@ class SubjectsView : View("Subjects View") {
                     vbox {
                         vboxConstraints {
                             alignment = Pos.BOTTOM_LEFT
-                            marginTop = 400.0
+                            marginTop = 460.0
                         }
                         label("YOUR ACCOUNT") {
                             vboxConstraints {
@@ -279,6 +283,69 @@ class SubjectsView : View("Subjects View") {
                     }
                 }
             }
+        }
+        vbox {
+            hbox {
+                hboxConstraints {
+                    alignment = Pos.CENTER_LEFT
+                }
+                useMaxWidth = true
+                add(searchBarViewSubjects)
+                button("+ Add a subject") {
+                    hboxConstraints {
+                        marginLeft = 15.0
+                        marginBottom = 15.0
+                    }
+                    action {
+                        //Action here
+                    }
+                    style {
+                        fontSize = 20.px
+                        borderWidth += box(1.5.px)
+                        backgroundRadius += box(9.px)
+                        fontFamily = "Source Sans Pro"
+                        fontWeight = FontWeight.BOLD
+                        textFill = Color.WHITE
+                        backgroundColor = multi(Styles.blueColor, Styles.blueColor, Styles.blueColor)
+                    }
+                    useMaxWidth = true
+                    paddingAll = 15.0
+                    paddingLeft = 17.0
+                    paddingRight = 17.0
+                }
+            }
+            vboxConstraints {
+                alignment = Pos.CENTER_LEFT
+            }
+            useMaxHeight = true
+            useMaxWidth = true
+            stackpane {
+                rectangle {
+                    width = 1480.0
+                    height = 840.0
+                    strokeWidth = 1.0
+                    fill = Color.TRANSPARENT
+                    opacity = 1.0
+                }
+                vbox {
+                    label("Subjects") {
+                        vboxConstraints {
+                            marginTop = 0.0
+                            marginLeft = 12.0
+                        }
+                        style {
+                            fontWeight = FontWeight.BOLD
+                            textFill = Color.WHITE
+                            fontSize = 36.px
+                            fontFamily = "Source Sans Pro"
+                        }
+                    }
+                }
+            }
+            paddingTop = 10.0
+            paddingLeft = 50.0
+            paddingRight = 50.0
+            paddingBottom = 50.0
         }
     }
 }

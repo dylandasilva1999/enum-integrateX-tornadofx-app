@@ -6,7 +6,7 @@ import com.example.demo.view.subjects.SubjectsView
 import com.example.demo.view.dashboard.DashboardView
 import com.example.demo.view.funds.FundsView
 import com.example.demo.view.login.LoginView
-import com.example.demo.view.searchbar.SearchBarView
+import com.example.demo.view.searchbar.SearchBarViewStudents
 import com.example.demo.view.staff.StaffView
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
@@ -19,7 +19,7 @@ class StudentsView : View("Students View") {
     val studentsController: StudentsController by inject()
 
     //SearchBarView
-    val searchBarView: SearchBarView by inject()
+    val searchBarViewStudents: SearchBarViewStudents by inject()
 
     //Root Layout
     override val root = hbox {
@@ -62,7 +62,7 @@ class StudentsView : View("Students View") {
                     }
                     button("Dashboard") {
                         action {
-                            replaceWith<DashboardView>()
+                            find(StudentsView::class).replaceWith(DashboardView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 20.0
@@ -89,7 +89,7 @@ class StudentsView : View("Students View") {
                     }
                     button("Students") {
                         action {
-                            replaceWith<StudentsView>()
+                            find(StudentsView::class).replaceWith(StudentsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -116,7 +116,7 @@ class StudentsView : View("Students View") {
                     }
                     button("Subjects") {
                         action {
-                            replaceWith<SubjectsView>()
+                            find(StudentsView::class).replaceWith(SubjectsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -142,7 +142,7 @@ class StudentsView : View("Students View") {
                     }
                     button("Staff") {
                         action {
-                            replaceWith<StaffView>()
+                            find(StudentsView::class).replaceWith(StaffView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -168,7 +168,7 @@ class StudentsView : View("Students View") {
                     }
                     button("Funds") {
                         action {
-                            replaceWith<FundsView>()
+                            find(StudentsView::class).replaceWith(StudentsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -195,7 +195,7 @@ class StudentsView : View("Students View") {
                     vbox {
                         vboxConstraints {
                             alignment = Pos.BOTTOM_LEFT
-                            marginTop = 400.0
+                            marginTop = 460.0
                         }
                         label("YOUR ACCOUNT") {
                             vboxConstraints {
@@ -291,7 +291,7 @@ class StudentsView : View("Students View") {
                     alignment = Pos.CENTER_LEFT
                 }
                 useMaxWidth = true
-                add(searchBarView)
+                add(searchBarViewStudents)
                 button("+ Add a student") {
                     hboxConstraints {
                         marginLeft = 15.0
@@ -329,7 +329,7 @@ class StudentsView : View("Students View") {
                 vbox {
                     label("Students") {
                         vboxConstraints {
-                            marginTop = 8.0
+                            marginTop = 0.0
                             marginLeft = 12.0
                         }
                         style {
@@ -341,6 +341,7 @@ class StudentsView : View("Students View") {
                     }
                 }
             }
+            paddingTop = 10.0
             paddingLeft = 50.0
             paddingRight = 50.0
             paddingBottom = 50.0

@@ -7,6 +7,7 @@ import com.example.demo.view.subjects.SubjectsView
 import com.example.demo.view.dashboard.DashboardView
 import com.example.demo.view.funds.FundsView
 import com.example.demo.view.login.LoginView
+import com.example.demo.view.searchbar.SearchBarViewStaff
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
@@ -16,6 +17,9 @@ class StaffView : View("Staff View") {
 
     //Instance of staffController
     val adminStaffController: AdminStaffController by inject()
+
+    //SearchBarView
+    val searchBarViewStaff: SearchBarViewStaff by inject()
 
     //Root Layout
     override val root = hbox {
@@ -58,7 +62,7 @@ class StaffView : View("Staff View") {
                     }
                     button("Dashboard") {
                         action {
-                            replaceWith<DashboardView>()
+                            find(StaffView::class).replaceWith(DashboardView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 20.0
@@ -85,7 +89,7 @@ class StaffView : View("Staff View") {
                     }
                     button("Students") {
                         action {
-                            replaceWith<StudentsView>()
+                            find(StaffView::class).replaceWith(StudentsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -111,7 +115,7 @@ class StaffView : View("Staff View") {
                     }
                     button("Subjects") {
                         action {
-                            replaceWith<SubjectsView>()
+                            find(StaffView::class).replaceWith(SubjectsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -137,7 +141,7 @@ class StaffView : View("Staff View") {
                     }
                     button("Staff") {
                         action {
-                            replaceWith<StaffView>()
+                            find(StaffView::class).replaceWith(StaffView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -163,7 +167,7 @@ class StaffView : View("Staff View") {
                     }
                     button("Funds") {
                         action {
-                            replaceWith<FundsView>()
+                            find(StaffView::class).replaceWith(FundsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -190,7 +194,7 @@ class StaffView : View("Staff View") {
                     vbox {
                         vboxConstraints {
                             alignment = Pos.BOTTOM_LEFT
-                            marginTop = 400.0
+                            marginTop = 460.0
                         }
                         label("YOUR ACCOUNT") {
                             vboxConstraints {
@@ -279,6 +283,69 @@ class StaffView : View("Staff View") {
                     }
                 }
             }
+        }
+        vbox {
+            hbox {
+                hboxConstraints {
+                    alignment = Pos.CENTER_LEFT
+                }
+                useMaxWidth = true
+                add(searchBarViewStaff)
+                button("+ Add a staff") {
+                    hboxConstraints {
+                        marginLeft = 15.0
+                        marginBottom = 15.0
+                    }
+                    action {
+                        //Action here
+                    }
+                    style {
+                        fontSize = 20.px
+                        borderWidth += box(1.5.px)
+                        backgroundRadius += box(9.px)
+                        fontFamily = "Source Sans Pro"
+                        fontWeight = FontWeight.BOLD
+                        textFill = Color.WHITE
+                        backgroundColor = multi(Styles.blueColor, Styles.blueColor, Styles.blueColor)
+                    }
+                    useMaxWidth = true
+                    paddingAll = 15.0
+                    paddingLeft = 29.0
+                    paddingRight = 29.0
+                }
+            }
+            vboxConstraints {
+                alignment = Pos.CENTER_LEFT
+            }
+            useMaxHeight = true
+            useMaxWidth = true
+            stackpane {
+                rectangle {
+                    width = 1480.0
+                    height = 840.0
+                    strokeWidth = 1.0
+                    fill = Color.TRANSPARENT
+                    opacity = 1.0
+                }
+                vbox {
+                    label("Staff") {
+                        vboxConstraints {
+                            marginTop = 0.0
+                            marginLeft = 12.0
+                        }
+                        style {
+                            fontWeight = FontWeight.BOLD
+                            textFill = Color.WHITE
+                            fontSize = 36.px
+                            fontFamily = "Source Sans Pro"
+                        }
+                    }
+                }
+            }
+            paddingTop = 10.0
+            paddingLeft = 50.0
+            paddingRight = 50.0
+            paddingBottom = 50.0
         }
     }
 }

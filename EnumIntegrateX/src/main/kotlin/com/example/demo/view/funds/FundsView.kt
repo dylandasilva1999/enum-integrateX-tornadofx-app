@@ -58,7 +58,7 @@ class FundsView : View("Funds View") {
                     }
                     button("Dashboard") {
                         action {
-                            replaceWith<DashboardView>()
+                            find(FundsView::class).replaceWith(DashboardView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 20.0
@@ -85,7 +85,7 @@ class FundsView : View("Funds View") {
                     }
                     button("Students") {
                         action {
-                            replaceWith<StudentsView>()
+                            find(FundsView::class).replaceWith(StudentsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -111,7 +111,7 @@ class FundsView : View("Funds View") {
                     }
                     button("Subjects") {
                         action {
-                            replaceWith<SubjectsView>()
+                            find(FundsView::class).replaceWith(SubjectsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -137,7 +137,7 @@ class FundsView : View("Funds View") {
                     }
                     button("Staff") {
                         action {
-                            replaceWith<StaffView>()
+                            find(FundsView::class).replaceWith(StaffView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -163,7 +163,7 @@ class FundsView : View("Funds View") {
                     }
                     button("Funds") {
                         action {
-                            replaceWith<FundsView>()
+                            find(FundsView::class).replaceWith(FundsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -190,7 +190,7 @@ class FundsView : View("Funds View") {
                     vbox {
                         vboxConstraints {
                             alignment = Pos.BOTTOM_LEFT
-                            marginTop = 400.0
+                            marginTop = 460.0
                         }
                         label("YOUR ACCOUNT") {
                             vboxConstraints {

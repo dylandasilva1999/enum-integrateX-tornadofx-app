@@ -79,7 +79,7 @@ class DashboardView : View("Dashboard View") {
                     }
                     button("Dashboard") {
                         action {
-                            replaceWith<DashboardView>()
+                            find(DashboardView::class).replaceWith(DashboardView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 20.0
@@ -106,7 +106,7 @@ class DashboardView : View("Dashboard View") {
                     }
                     button("Students") {
                         action {
-                            replaceWith<StudentsView>()
+                            find(DashboardView::class).replaceWith(StudentsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -132,7 +132,7 @@ class DashboardView : View("Dashboard View") {
                     }
                     button("Subjects") {
                         action {
-                            replaceWith<SubjectsView>()
+                            find(DashboardView::class).replaceWith(SubjectsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -158,7 +158,7 @@ class DashboardView : View("Dashboard View") {
                     }
                     button("Staff") {
                         action {
-                            replaceWith<StaffView>()
+                            find(DashboardView::class).replaceWith(StaffView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -184,7 +184,7 @@ class DashboardView : View("Dashboard View") {
                     }
                     button("Funds") {
                         action {
-                            replaceWith<FundsView>()
+                            find(DashboardView::class).replaceWith(FundsView::class, sizeToScene = true, centerOnScreen = true)
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -211,7 +211,7 @@ class DashboardView : View("Dashboard View") {
                     vbox {
                         vboxConstraints {
                             alignment = Pos.BOTTOM_LEFT
-                            marginTop = 400.0
+                            marginTop = 460.0
                         }
                         label("YOUR ACCOUNT") {
                             vboxConstraints {
