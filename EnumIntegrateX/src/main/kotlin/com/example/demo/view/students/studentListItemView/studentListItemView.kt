@@ -4,6 +4,9 @@ import com.example.demo.app.Styles
 import com.example.demo.controller.students.StudentsController
 import com.example.demo.model.Student
 import com.example.demo.model.StudentModel
+import com.example.demo.view.funds.FundsView
+import com.example.demo.view.students.StudentsView
+import com.example.demo.view.students.studentDetailsView.studentDetailsView
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*
@@ -15,7 +18,33 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
     //Student List
     val studentList = studentsController.studentsList
 
+    fun getStudent(): Student {
+        val selectedStudent = Student(
+            studentModel.id.value,
+            studentModel.title.value,
+            studentModel.fullName.value,
+            studentModel.email.value,
+            studentModel.image.value,
+            studentModel.idNumber.value,
+            studentModel.credits.value,
+            studentModel.education.value,
+            studentModel.subjects.value,
+            studentModel.fees.value
+        )
+        return selectedStudent
+    }
+
     override val root = vbox {
+
+        val studentModel = StudentModel(getStudent())
+
+        val fragmentScope = Scope()
+        setInScope(studentModel, fragmentScope)
+
+        fun changeView() {
+            this += find<studentDetailsView>(fragmentScope)
+        }
+
         stackpane {
             stackpaneConstraints {
                 paddingTop = 20.0
@@ -81,7 +110,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                 label(studentModel.education) {
                     hboxConstraints {
                         marginTop = 40.0
-                        marginLeft = 140.0
+                        marginLeft = 80.0
                     }
                     style {
                         fontWeight = FontWeight.NORMAL
@@ -94,10 +123,11 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                 button("View Student Details") {
                     hboxConstraints {
                         marginTop = 30.0
-                        marginLeft = 180.0
+                        marginLeft = 70.0
                     }
                     action {
-                        //Action here
+                        getStudent()
+                        changeView()
                     }
                     style {
                         fontSize = 20.px
@@ -113,8 +143,29 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                     paddingLeft = 30.0
                     paddingRight = 30.0
                 }
+                button("Remove") {
+                    hboxConstraints {
+                        marginTop = 30.0
+                        marginLeft = 20.0
+                    }
+                    action {
+                    }
+                    style {
+                        fontSize = 20.px
+                        borderWidth += box(2.5.px)
+                        borderColor += box(Styles.yellowColor)
+                        borderRadius += box(9.px)
+                        fontFamily = "Source Sans Pro"
+                        fontWeight = FontWeight.BOLD
+                        textFill = Color.WHITE
+                        backgroundColor = multi(Color.TRANSPARENT, Color.TRANSPARENT, Color.TRANSPARENT)
+                    }
+                    useMaxWidth = true
+                    paddingAll = 10.0
+                    paddingLeft = 30.0
+                    paddingRight = 30.0
+                }
             }
         }
     }
-
 }

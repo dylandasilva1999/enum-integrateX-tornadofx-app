@@ -26,7 +26,6 @@ class StudentsView : View("Students View") {
     val studentList = studentsController.studentsList
     //Students
     val student: StudentModel by inject()
-    val selectedStudent = SimpleObjectProperty<Student>()
 
     //SearchBarView
     val searchBarViewStudents: SearchBarViewStudents by inject()

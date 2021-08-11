@@ -7,12 +7,16 @@ import javafx.beans.property.SimpleIntegerProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.collections.FXCollections
 import tornadofx.*
+import java.util.*
+import kotlin.random.Random
 
 class studentEditorView : View("Add Student View") {
 
     //Values for inputs in form
+    var studentId = SimpleIntegerProperty()
     val studentTitle = FXCollections.observableArrayList("MR", "MRS")
     val studentFullName = SimpleStringProperty()
+    val studentEmail = SimpleStringProperty()
     val studentImage = SimpleStringProperty()
     val studentIdNumber = SimpleStringProperty()
     var studentCredits = SimpleIntegerProperty()
@@ -40,8 +44,11 @@ class studentEditorView : View("Add Student View") {
                 field("Full Name") {
                     textfield(studentFullName)
                 }
+                field("Student Email") {
+                    textfield(studentEmail).setPromptText("190082@openwindow.co.za")
+                }
                 field("Image") {
-                    textfield(studentImage)
+                    textfield(studentImage).setPromptText("default-profile.png")
                 }
                 field("ID Number") {
                     textfield(studentIdNumber)
@@ -54,11 +61,14 @@ class studentEditorView : View("Add Student View") {
                 studentCredits = SimpleIntegerProperty(0)
                 studentSubjects = SimpleStringProperty("")
                 studentFees = SimpleIntegerProperty(0)
+                studentId = SimpleIntegerProperty(Random.nextInt(0, 100))
 
                 action {
                     val newStudent = Student(
+                        studentId.value,
                         selectedTitle.value,
                         studentFullName.value,
+                        studentEmail.value,
                         studentImage.value,
                         studentIdNumber.value,
                         studentCredits.value,
@@ -68,7 +78,7 @@ class studentEditorView : View("Add Student View") {
                     )
                     studentList.add(newStudent)
                     for (student in studentList) {
-                        println(student.fullNameProperty.value)
+                        println(student.idProperty.value)
                     }
 
                     selectedTitle.value = ""
