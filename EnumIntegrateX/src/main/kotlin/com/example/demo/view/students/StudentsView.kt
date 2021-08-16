@@ -14,6 +14,7 @@ import com.example.demo.view.students.studentEditorView.studentEditorView
 import com.example.demo.view.students.studentListItemView.studentListItemView
 import javafx.beans.property.SimpleObjectProperty
 import javafx.geometry.Pos
+import javafx.scene.control.ScrollPane
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*

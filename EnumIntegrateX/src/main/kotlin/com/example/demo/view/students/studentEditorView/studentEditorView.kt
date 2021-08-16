@@ -45,7 +45,7 @@ class studentEditorView : View("Add Student View") {
                     combobox(studentEditorController.selectedSubjectFour, studentEditorController.studentSubjects)
                 }
                 field("Image") {
-                    textfield(studentEditorController.studentImage).promptText = ("default-profile.png")
+                    textfield(studentEditorController.studentImage)
                 }
                 field("ID Number") {
                     textfield(studentEditorController.studentIdNumber)
@@ -56,6 +56,7 @@ class studentEditorView : View("Add Student View") {
             }
             button("Add Student") {
                 studentEditorController.studentId = SimpleIntegerProperty(Random.nextInt(0, 100))
+                studentEditorController.studentImage.value = "default-profile.png"
 
                 studentEditorController.totalStudentSubjects.bind(Bindings.concat(studentEditorController.selectedSubjectOne, ", ",
                         studentEditorController.selectedSubjectTwo, ", ",studentEditorController.selectedSubjectThree, ", ",
@@ -101,7 +102,6 @@ class studentEditorView : View("Add Student View") {
 
                     studentEditorController.selectedTitle.value = ""
                     studentEditorController.studentFullName.value = ""
-                    studentEditorController.studentImage.value = ""
                     studentEditorController.studentEmail.value = ""
                     studentEditorController.studentIdNumber.value = ""
                     studentEditorController.selectedSubjectOne.value = ""
