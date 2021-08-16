@@ -69,7 +69,7 @@ class subjectListItemView(val subjectModel: SubjectModel) : View("Student List I
                 }
                 label(subjectModel.name) {
                     hboxConstraints {
-                        marginTop = 45.0
+                        marginTop = 42.0
                         marginLeft = 30.0
                     }
                     style {
@@ -82,7 +82,7 @@ class subjectListItemView(val subjectModel: SubjectModel) : View("Student List I
                 }
                 label(subjectModel.code) {
                     hboxConstraints {
-                        marginTop = 45.0
+                        marginTop = 42.0
                         marginLeft = 50.0
                     }
                     style {
@@ -95,7 +95,7 @@ class subjectListItemView(val subjectModel: SubjectModel) : View("Student List I
                 }
                 label(subjectModel.lecturer) {
                     hboxConstraints {
-                        marginTop = 45.0
+                        marginTop = 42.0
                         marginLeft = 30.0
                     }
                     style {
@@ -108,7 +108,7 @@ class subjectListItemView(val subjectModel: SubjectModel) : View("Student List I
                 }
                 label(subjectModel.credits) {
                     hboxConstraints {
-                        marginTop = 45.0
+                        marginTop = 42.0
                         marginLeft = 50.0
                     }
                     style {
@@ -121,7 +121,7 @@ class subjectListItemView(val subjectModel: SubjectModel) : View("Student List I
                 }
                 label(subjectModel.hoursPerWeek) {
                     hboxConstraints {
-                        marginTop = 45.0
+                        marginTop = 42.0
                         marginLeft = 50.0
                     }
                     style {
@@ -134,7 +134,7 @@ class subjectListItemView(val subjectModel: SubjectModel) : View("Student List I
                 }
                 label("R${subjectModel.pricePerMonth.value}") {
                     hboxConstraints {
-                        marginTop = 45.0
+                        marginTop = 42.0
                         marginLeft = 50.0
                     }
                     style {
@@ -147,7 +147,7 @@ class subjectListItemView(val subjectModel: SubjectModel) : View("Student List I
                 }
                 label(subjectModel.students) {
                     hboxConstraints {
-                        marginTop = 45.0
+                        marginTop = 42.0
                         marginLeft = 50.0
                     }
                     style {
