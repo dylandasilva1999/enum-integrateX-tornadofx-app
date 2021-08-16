@@ -1,5 +1,6 @@
 package com.example.demo.controller.students
 
+import com.example.demo.controller.subjects.SubjectsController
 import com.example.demo.model.Student
 import tornadofx.*
 
@@ -13,4 +14,17 @@ class StudentsController: Controller() {
         Student(6,"MRS","Alyssia Cole","1700123@openwindow.co.za", "student-6.png", "9624015600812", 50, "Degree", "CC, ID, MD", 45000),
         Student(7,"MR","Tom Talbot","1800123@openwindow.co.za", "student-7.png", "9706225823088", 50, "Diploma", "CC, ID, MD", 22000),
     ).asObservable()
+
+    //Instance of subjectsController
+    val subjectsController: SubjectsController by inject()
+
+    //Calculate Student Credits
+    fun calculateCredits() {
+
+    }
+
+    //Calculate Student Fees
+    fun calculateStudentFees() {
+
+    }
 }

@@ -1,8 +1,11 @@
 package com.example.demo.view.students.studentEditorView
 
+import com.example.demo.controller.students.StudentEditorController
 import com.example.demo.controller.students.StudentsController
+import com.example.demo.controller.subjects.SubjectsController
 import com.example.demo.model.Student
 import com.example.demo.model.StudentModel
+import javafx.beans.binding.Bindings
 import javafx.beans.property.SimpleIntegerProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.collections.FXCollections
@@ -12,83 +15,79 @@ import kotlin.random.Random
 
 class studentEditorView : View("Add Student View") {
 
-    //Values for inputs in form
-    var studentId = SimpleIntegerProperty()
-    val studentTitle = FXCollections.observableArrayList("MR", "MRS")
-    val studentFullName = SimpleStringProperty()
-    val studentEmail = SimpleStringProperty()
-    val studentImage = SimpleStringProperty()
-    val studentIdNumber = SimpleStringProperty()
-    var studentCredits = SimpleIntegerProperty()
-    val studentEducation = FXCollections.observableArrayList("Diploma", "Degree")
-    var studentSubjects = SimpleStringProperty()
-    var studentFees = SimpleIntegerProperty()
-
-    //Selected Education Value In Combo List
-    val selectedEducation = SimpleStringProperty()
-
-    //Selected Education Value In Combo List
-    val selectedTitle = SimpleStringProperty()
-
-    //Instance of studentsController
-    val studentsController: StudentsController by inject()
-    //Student List
-    val studentList = studentsController.studentsList
+    //Instance of subjectsController
+    val studentEditorController: StudentEditorController by inject()
 
     override val root = vbox {
         form {
             fieldset("Add a student") {
                 field("Student Title") {
-                    combobox(selectedTitle, studentTitle)
+                    combobox(studentEditorController.selectedTitle, studentEditorController.studentTitle)
                 }
                 field("Full Name") {
-                    textfield(studentFullName)
+                    textfield(studentEditorController.studentFullName)
                 }
                 field("Student Email") {
-                    textfield(studentEmail).setPromptText("190082@openwindow.co.za")
+                    textfield(studentEditorController.studentEmail).promptText = "190082@openwindow.co.za"
+                }
+                field("Subject 1") {
+                    combobox(studentEditorController.selectedSubjectOne, studentEditorController.studentSubjects)
+                }
+                field("Subject 2") {
+                    combobox(studentEditorController.selectedSubjectTwo, studentEditorController.studentSubjects)
+                }
+                field("Subject 3") {
+                    combobox(studentEditorController.selectedSubjectThree, studentEditorController.studentSubjects)
+                }
+                field("Subject 4") {
+                    combobox(studentEditorController.selectedSubjectFour, studentEditorController.studentSubjects)
                 }
                 field("Image") {
-                    textfield(studentImage).setPromptText("default-profile.png")
+                    textfield(studentEditorController.studentImage).promptText = ("default-profile.png")
                 }
                 field("ID Number") {
-                    textfield(studentIdNumber)
+                    textfield(studentEditorController.studentIdNumber)
                 }
                 field("Education Type") {
-                    combobox(selectedEducation, studentEducation)
+                    combobox(studentEditorController.selectedEducation, studentEditorController.studentEducation)
                 }
             }
             button("Add Student") {
-                studentCredits = SimpleIntegerProperty(0)
-                studentSubjects = SimpleStringProperty("")
-                studentFees = SimpleIntegerProperty(0)
-                studentId = SimpleIntegerProperty(Random.nextInt(0, 100))
+                studentEditorController.studentCredits = SimpleIntegerProperty(0)
+                studentEditorController.studentFees = SimpleIntegerProperty(0)
+                studentEditorController.studentId = SimpleIntegerProperty(Random.nextInt(0, 100))
+
+                studentEditorController.totalStudentSubjects.bind(Bindings.concat(studentEditorController.selectedSubjectOne, ", ",
+                    studentEditorController.selectedSubjectTwo, ", ",studentEditorController.selectedSubjectThree, ", ",
+                    studentEditorController.selectedSubjectFour))
 
                 action {
                     val newStudent = Student(
-                        studentId.value,
-                        selectedTitle.value,
-                        studentFullName.value,
-                        studentEmail.value,
-                        studentImage.value,
-                        studentIdNumber.value,
-                        studentCredits.value,
-                        selectedEducation.value,
-                        studentSubjects.value,
-                        studentFees.value
+                        studentEditorController.studentId.value,
+                        studentEditorController.selectedTitle.value,
+                        studentEditorController.studentFullName.value,
+                        studentEditorController.studentEmail.value,
+                        studentEditorController.studentImage.value,
+                        studentEditorController.studentIdNumber.value,
+                        studentEditorController.studentCredits.value,
+                        studentEditorController.selectedEducation.value,
+                        studentEditorController.totalStudentSubjects.value,
+                        studentEditorController.studentFees.value
                     )
-                    studentList.add(newStudent)
-                    for (student in studentList) {
-                        println(student.idProperty.value)
+
+                    studentEditorController.studentList.add(newStudent)
+
+                    for (student in studentEditorController.studentList) {
+                        println(studentEditorController.totalStudentSubjects.value)
                     }
 
-                    selectedTitle.value = ""
-                    studentFullName.value = ""
-                    studentImage.value = ""
-                    studentIdNumber.value = ""
-                    studentCredits.value = 0
-                    selectedEducation.value = ""
-                    studentSubjects.value = ""
-                    studentFees.value = 0
+                    studentEditorController.selectedTitle.value = ""
+                    studentEditorController.studentFullName.value = ""
+                    studentEditorController.studentImage.value = ""
+                    studentEditorController.studentIdNumber.value = ""
+                    studentEditorController.studentCredits.value = 0
+                    studentEditorController.selectedEducation.value = ""
+                    studentEditorController.studentFees.value = 0
                 }
             }
         }
