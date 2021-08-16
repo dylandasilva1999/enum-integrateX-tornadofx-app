@@ -2,7 +2,6 @@ package com.example.demo.view.students
 
 import com.example.demo.app.Styles
 import com.example.demo.controller.students.StudentsController
-import com.example.demo.model.Student
 import com.example.demo.model.StudentModel
 import com.example.demo.view.subjects.SubjectsView
 import com.example.demo.view.dashboard.DashboardView
@@ -11,10 +10,10 @@ import com.example.demo.view.login.LoginView
 import com.example.demo.view.searchbar.SearchBarViewStudents
 import com.example.demo.view.staff.StaffView
 import com.example.demo.view.students.studentEditorView.studentEditorView
+import com.example.demo.view.students.studentEditorView.subjectEditorView
 import com.example.demo.view.students.studentListItemView.studentListItemView
-import javafx.beans.property.SimpleObjectProperty
+import com.example.demo.view.students.studentListItemView.subjectListItemView
 import javafx.geometry.Pos
-import javafx.scene.control.ScrollPane
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*
@@ -396,27 +395,41 @@ class StudentsView : View("Students View") {
                 studentList.onChange {
                     // Clear View
                     this.clear()
-                    scrollpane {
-                        style {
-                            baseColor = Styles.mutedDarkBlueColor
-                            focusColor = Color.TRANSPARENT
-                            edgeToEdge = true
-                            pannable = true
-                        }
-                        borderpane {
+                    vbox {
+                        label("Students") {
+                            vboxConstraints {
+                                marginTop = 0.0
+                                marginLeft = 12.0
+                            }
                             style {
-                                backgroundColor += Styles.mutedDarkBlueColor
-                            }
-                            center = vbox {
-                                vboxConstraints {
-                                    paddingLeft = 5.0
-                                }
-                                for (student in studentList) {
-                                    add(studentListItemView(StudentModel(student)))
-                                }
+                                fontWeight = FontWeight.BOLD
+                                textFill = Color.WHITE
+                                fontSize = 36.px
+                                fontFamily = "Source Sans Pro"
                             }
                         }
-                        prefHeight = 840.0
+                        scrollpane {
+                            style {
+                                baseColor = Styles.mutedDarkBlueColor
+                                focusColor = Color.TRANSPARENT
+                                edgeToEdge = true
+                                pannable = true
+                            }
+                            borderpane {
+                                style {
+                                    backgroundColor += Styles.mutedDarkBlueColor
+                                }
+                                center = vbox {
+                                    vboxConstraints {
+                                        paddingLeft = 5.0
+                                    }
+                                    for (student in studentList) {
+                                        add(studentListItemView(StudentModel(student)))
+                                    }
+                                }
+                            }
+                            prefHeight = 840.0
+                        }
                     }
                 }
             }

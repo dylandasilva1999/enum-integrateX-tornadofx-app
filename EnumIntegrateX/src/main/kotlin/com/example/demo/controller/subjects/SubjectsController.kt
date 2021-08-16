@@ -30,5 +30,6 @@ class SubjectsController: Controller() {
         Subject("Illustration","IL", "il-icon.png", "Agatha Dickinson", 50, 45, 2200, 4),
         Subject("Motion Design","MD", "md-icon.png", "Agatha Dickinson", 30, 45, 2400, 4),
         Subject("Photography","PG", "pg-icon.png", "Lucy Livingston", 30, 45, 2600, 4),
+        Subject("Photography","PG", "pg-icon.png", "Lucy Livingston", 30, 45, 2600, 4),
     ).asObservable()
 }   

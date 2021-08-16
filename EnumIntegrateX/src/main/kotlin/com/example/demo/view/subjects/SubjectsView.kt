@@ -2,12 +2,14 @@ package com.example.demo.view.subjects
 
 import com.example.demo.app.Styles
 import com.example.demo.controller.subjects.SubjectsController
+import com.example.demo.model.SubjectModel
 import com.example.demo.view.dashboard.DashboardView
 import com.example.demo.view.funds.FundsView
 import com.example.demo.view.login.LoginView
 import com.example.demo.view.searchbar.SearchBarViewSubjects
 import com.example.demo.view.staff.StaffView
 import com.example.demo.view.students.StudentsView
+import com.example.demo.view.students.studentListItemView.subjectListItemView
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
@@ -17,6 +19,10 @@ class SubjectsView : View("Subjects View") {
 
     //Instance of subjectsController
     val subjectsController: SubjectsController by inject()
+    //Subjects List
+    val subjectList = subjectsController.subjectsList
+    //Subjects
+    val subject: SubjectModel by inject()
 
     //SearchBarView
     val searchBarViewSubjects: SearchBarViewSubjects by inject()
@@ -336,6 +342,68 @@ class SubjectsView : View("Subjects View") {
                             textFill = Color.WHITE
                             fontSize = 36.px
                             fontFamily = "Source Sans Pro"
+                        }
+                    }
+                    scrollpane {
+                        style {
+                            baseColor = Styles.mutedDarkBlueColor
+                            focusColor = Color.TRANSPARENT
+                            edgeToEdge = true
+                            pannable = true
+                        }
+                        borderpane {
+                            style {
+                                backgroundColor += Styles.mutedDarkBlueColor
+                            }
+                            center = vbox {
+                                vboxConstraints {
+                                    paddingLeft = 5.0
+                                }
+                                for (subject in subjectList) {
+                                    add(subjectListItemView(SubjectModel(subject)))
+                                }
+                            }
+                        }
+                        prefHeight = 840.0
+                    }
+                }
+                subjectList.onChange {
+                    // Clear View
+                    this.clear()
+                    vbox {
+                        label("Subjects") {
+                            vboxConstraints {
+                                marginTop = 0.0
+                                marginLeft = 12.0
+                            }
+                            style {
+                                fontWeight = FontWeight.BOLD
+                                textFill = Color.WHITE
+                                fontSize = 36.px
+                                fontFamily = "Source Sans Pro"
+                            }
+                        }
+                        scrollpane {
+                            style {
+                                baseColor = Styles.mutedDarkBlueColor
+                                focusColor = Color.TRANSPARENT
+                                edgeToEdge = true
+                                pannable = true
+                            }
+                            borderpane {
+                                style {
+                                    backgroundColor += Styles.mutedDarkBlueColor
+                                }
+                                center = vbox {
+                                    vboxConstraints {
+                                        paddingLeft = 5.0
+                                    }
+                                    for (subject in subjectList) {
+                                        add(subjectListItemView(SubjectModel(subject)))
+                                    }
+                                }
+                            }
+                            prefHeight = 840.0
                         }
                     }
                 }

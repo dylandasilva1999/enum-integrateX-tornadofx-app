@@ -1,14 +1,14 @@
 package com.example.demo.view.students.studentDetailsView
 
 import com.example.demo.app.Styles
-import com.example.demo.model.StudentModel
+import com.example.demo.model.SubjectModel
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*
 
-class studentDetailsView() : Fragment("Student Details View") {
+class subjectDetailsView() : Fragment("Student Details View") {
 
-    val studentModel: StudentModel by inject()
+    val subjectModel: SubjectModel by inject()
 
     override val root = vbox {
 
@@ -34,7 +34,7 @@ class studentDetailsView() : Fragment("Student Details View") {
                 opacity = 1.0
             }
             vbox {
-                label("Profile Overview") {
+                label("Subject Details") {
                     vboxConstraints {
                         marginTop = 40.0
                         marginLeft = 60.0
@@ -47,7 +47,7 @@ class studentDetailsView() : Fragment("Student Details View") {
                     }
                 }
                 hbox {
-                    imageview(studentModel.image) {
+                    imageview(subjectModel.image) {
                         hboxConstraints {
                             marginTop = 20.0
                             marginLeft = 60.0
@@ -68,7 +68,7 @@ class studentDetailsView() : Fragment("Student Details View") {
                         opacity = 1.0
                     }
                     vbox {
-                        label(studentModel.fullName) {
+                        label(subjectModel.name) {
                             vboxConstraints {
                                 marginTop = -35.0
                                 marginLeft = 60.0
@@ -120,7 +120,7 @@ class studentDetailsView() : Fragment("Student Details View") {
                                             fontFamily = "Source Sans Pro"
                                         }
                                     }
-                                    label(studentModel.idNumber) {
+                                    label(subjectModel.hoursPerWeek) {
                                         vboxConstraints {
                                             marginTop = 10.0
                                             marginLeft = 20.0
@@ -161,7 +161,7 @@ class studentDetailsView() : Fragment("Student Details View") {
                                             fontFamily = "Source Sans Pro"
                                         }
                                     }
-                                    label(studentModel.credits) {
+                                    label(subjectModel.credits) {
                                         vboxConstraints {
                                             marginTop = 5.0
                                             marginLeft = 20.0
@@ -202,7 +202,7 @@ class studentDetailsView() : Fragment("Student Details View") {
                                             fontFamily = "Source Sans Pro"
                                         }
                                     }
-                                    label(studentModel.education) {
+                                    label(subjectModel.lecturer) {
                                         vboxConstraints {
                                             marginTop = 5.0
                                             marginLeft = 20.0
@@ -245,7 +245,7 @@ class studentDetailsView() : Fragment("Student Details View") {
                                             fontFamily = "Source Sans Pro"
                                         }
                                     }
-                                    label(studentModel.subjects) {
+                                    label(subjectModel.lecturer) {
                                         vboxConstraints {
                                             marginTop = 15.0
                                             marginLeft = 20.0
@@ -286,7 +286,7 @@ class studentDetailsView() : Fragment("Student Details View") {
                                             fontFamily = "Source Sans Pro"
                                         }
                                     }
-                                    label("R${studentModel.fees.value}") {
+                                    label("R${subjectModel.pricePerMonth.value}") {
                                         vboxConstraints {
                                             marginTop = 15.0
                                             marginLeft = 20.0
@@ -327,7 +327,7 @@ class studentDetailsView() : Fragment("Student Details View") {
                                             fontFamily = "Source Sans Pro"
                                         }
                                     }
-                                    label(studentModel.email) {
+                                    label(subjectModel.code) {
                                         vboxConstraints {
                                             marginTop = 30.0
                                             marginLeft = 20.0
