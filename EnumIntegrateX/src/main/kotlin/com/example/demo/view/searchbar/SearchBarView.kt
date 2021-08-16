@@ -22,7 +22,7 @@ class SearchBarViewStudents : View("Search Bar View Dashboard") {
             fieldset {
                 labelPosition = Orientation.HORIZONTAL
                 field() {
-                    textfield("Search for student by name or ID") {
+                    textfield() {
                         style {
                             textFill = Color.WHITE
                             backgroundColor = multi(
@@ -36,7 +36,7 @@ class SearchBarViewStudents : View("Search Bar View Dashboard") {
                             borderRadius += box(9.px)
                             borderColor += box(Styles.darkBlueColor)
                         }
-                    }
+                    }.promptText = "Search for student by name or ID"
                 }
             }
         }
