@@ -2,8 +2,6 @@ package com.example.demo.view.searchbar
 
 import com.example.demo.app.Styles
 import javafx.geometry.Orientation
-import javafx.geometry.Pos
-import javafx.scene.Parent
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*
