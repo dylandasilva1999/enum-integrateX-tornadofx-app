@@ -45,4 +45,44 @@ class StudentEditorController: Controller() {
     val selectedSubjectTwo = SimpleStringProperty()
     val selectedSubjectThree = SimpleStringProperty()
     val selectedSubjectFour = SimpleStringProperty()
+
+    //Calculate Student Credits
+    fun calculateCredits(): SimpleIntegerProperty {
+        var totalStudentCredits = SimpleIntegerProperty()
+
+        for (subject in subjectsList) {
+            if (subject.codeProperty.value == selectedSubjectOne.value) {
+                totalStudentCredits += subject.creditsProperty.value
+            } else if (subject.codeProperty.value == selectedSubjectTwo.value) {
+                totalStudentCredits += subject.creditsProperty.value
+            } else if (subject.codeProperty.value == selectedSubjectThree.value) {
+                totalStudentCredits += subject.creditsProperty.value
+            } else if(subject.codeProperty.value == selectedSubjectFour.value) {
+                totalStudentCredits += subject.creditsProperty.value
+            }
+        }
+
+        studentCredits = totalStudentCredits
+        return studentCredits
+    }
+
+    //Calculate Student Fees
+    fun calculateStudentFees(): SimpleIntegerProperty {
+        var totalStudentFees = SimpleIntegerProperty()
+
+        for (subject in subjectsList) {
+            if (subject.codeProperty.value == selectedSubjectOne.value) {
+                totalStudentFees += subject.pricePerMonthProperty.value
+            } else if (subject.codeProperty.value == selectedSubjectTwo.value) {
+                totalStudentFees += subject.pricePerMonthProperty.value
+            } else if (subject.codeProperty.value == selectedSubjectThree.value) {
+                totalStudentFees += subject.pricePerMonthProperty.value
+            } else if(subject.codeProperty.value == selectedSubjectFour.value) {
+                totalStudentFees += subject.pricePerMonthProperty.value
+            }
+        }
+
+        studentFees = totalStudentFees
+        return studentFees
+    }
 }
