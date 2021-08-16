@@ -62,7 +62,7 @@ class SubjectsView : View("Subjects View") {
                     }
                     button("Dashboard") {
                         action {
-                            find(SubjectsView::class).replaceWith(DashboardView::class, sizeToScene = true, centerOnScreen = true)
+                            find(SubjectsView::class).replaceWith(DashboardView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
                         }
                         vboxConstraints {
                             marginTop = 20.0
@@ -89,7 +89,7 @@ class SubjectsView : View("Subjects View") {
                     }
                     button("Students") {
                         action {
-                            find(SubjectsView::class).replaceWith(StudentsView::class, sizeToScene = true, centerOnScreen = true)
+                            find(SubjectsView::class).replaceWith(StudentsView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -115,7 +115,7 @@ class SubjectsView : View("Subjects View") {
                     }
                     button("Subjects") {
                         action {
-                            find(SubjectsView::class).replaceWith(SubjectsView::class, sizeToScene = true, centerOnScreen = true)
+                            find(SubjectsView::class).replaceWith(SubjectsView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -141,7 +141,7 @@ class SubjectsView : View("Subjects View") {
                     }
                     button("Staff") {
                         action {
-                            find(SubjectsView::class).replaceWith(StaffView::class, sizeToScene = true, centerOnScreen = true)
+                            find(SubjectsView::class).replaceWith(StaffView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -167,7 +167,7 @@ class SubjectsView : View("Subjects View") {
                     }
                     button("Funds") {
                         action {
-                            find(SubjectsView::class).replaceWith(FundsView::class, sizeToScene = true, centerOnScreen = true)
+                            find(SubjectsView::class).replaceWith(FundsView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -266,7 +266,7 @@ class SubjectsView : View("Subjects View") {
                                 marginRight = 55.0
                             }
                             action {
-                                replaceWith<LoginView>()
+                                find(SubjectsView::class).replaceWith(LoginView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Slide(0.5.seconds))
                             }
                             style {
                                 fontSize = 20.px
@@ -310,8 +310,6 @@ class SubjectsView : View("Subjects View") {
                     }
                     useMaxWidth = true
                     paddingAll = 15.0
-                    paddingLeft = 17.0
-                    paddingRight = 17.0
                 }
             }
             vboxConstraints {

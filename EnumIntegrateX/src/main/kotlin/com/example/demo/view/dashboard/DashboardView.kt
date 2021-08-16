@@ -76,7 +76,7 @@ class DashboardView : View("Dashboard View") {
                     }
                     button("Dashboard") {
                         action {
-                            find(DashboardView::class).replaceWith(DashboardView::class, sizeToScene = true, centerOnScreen = true)
+                            find(DashboardView::class).replaceWith(DashboardView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
                         }
                         vboxConstraints {
                             marginTop = 20.0
@@ -103,7 +103,7 @@ class DashboardView : View("Dashboard View") {
                     }
                     button("Students") {
                         action {
-                            find(DashboardView::class).replaceWith(StudentsView::class, sizeToScene = true, centerOnScreen = true)
+                            find(DashboardView::class).replaceWith(StudentsView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -129,7 +129,7 @@ class DashboardView : View("Dashboard View") {
                     }
                     button("Subjects") {
                         action {
-                            find(DashboardView::class).replaceWith(SubjectsView::class, sizeToScene = true, centerOnScreen = true)
+                            find(DashboardView::class).replaceWith(SubjectsView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -155,7 +155,7 @@ class DashboardView : View("Dashboard View") {
                     }
                     button("Staff") {
                         action {
-                            find(DashboardView::class).replaceWith(StaffView::class, sizeToScene = true, centerOnScreen = true)
+                            find(DashboardView::class).replaceWith(StaffView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -181,7 +181,7 @@ class DashboardView : View("Dashboard View") {
                     }
                     button("Funds") {
                         action {
-                            find(DashboardView::class).replaceWith(FundsView::class, sizeToScene = true, centerOnScreen = true)
+                            find(DashboardView::class).replaceWith(FundsView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -280,7 +280,7 @@ class DashboardView : View("Dashboard View") {
                                 marginRight = 55.0
                             }
                             action {
-                                replaceWith<LoginView>()
+                                find(DashboardView::class).replaceWith(LoginView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Slide(0.5.seconds))
                             }
                             style {
                                 fontSize = 20.px

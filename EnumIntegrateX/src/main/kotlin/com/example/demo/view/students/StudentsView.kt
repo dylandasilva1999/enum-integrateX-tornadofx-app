@@ -75,7 +75,7 @@ class StudentsView : View("Students View") {
                             find(StudentsView::class).replaceWith(
                                 DashboardView::class,
                                 sizeToScene = true,
-                                centerOnScreen = true
+                                centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds)
                             )
                         }
                         vboxConstraints {
@@ -106,7 +106,7 @@ class StudentsView : View("Students View") {
                             find(StudentsView::class).replaceWith(
                                 StudentsView::class,
                                 sizeToScene = true,
-                                centerOnScreen = true
+                                centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds)
                             )
                         }
                         vboxConstraints {
@@ -137,7 +137,7 @@ class StudentsView : View("Students View") {
                             find(StudentsView::class).replaceWith(
                                 SubjectsView::class,
                                 sizeToScene = true,
-                                centerOnScreen = true
+                                centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds)
                             )
                         }
                         vboxConstraints {
@@ -167,7 +167,8 @@ class StudentsView : View("Students View") {
                             find(StudentsView::class).replaceWith(
                                 StaffView::class,
                                 sizeToScene = true,
-                                centerOnScreen = true
+                                centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds)
+
                             )
                         }
                         vboxConstraints {
@@ -197,7 +198,7 @@ class StudentsView : View("Students View") {
                             find(StudentsView::class).replaceWith(
                                 FundsView::class,
                                 sizeToScene = true,
-                                centerOnScreen = true
+                                centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds)
                             )
                         }
                         vboxConstraints {
@@ -297,7 +298,7 @@ class StudentsView : View("Students View") {
                                 marginRight = 55.0
                             }
                             action {
-                                replaceWith<LoginView>()
+                                find(StudentsView::class).replaceWith(LoginView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Slide(0.5.seconds))
                             }
                             style {
                                 fontSize = 20.px

@@ -5,6 +5,7 @@ import com.example.demo.controller.login.LoginController
 import com.example.demo.model.User
 import com.example.demo.model.UserModel
 import com.example.demo.view.dashboard.DashboardView
+import com.example.demo.view.students.StudentsView
 import javafx.geometry.Orientation
 import javafx.geometry.Pos
 import javafx.scene.control.Alert
@@ -29,7 +30,12 @@ class LoginView : View("Login View") {
                 loginController.loginCheck(model.user)
             } ui { success ->
                 if (success)
-                    replaceWith<DashboardView>()
+                    find(LoginView::class).replaceWith(
+                        DashboardView::class,
+                        sizeToScene = true,
+                        centerOnScreen = true,
+                        transition = ViewTransition.Slide(0.5.seconds)
+                    )
                 else
                     alert(Alert.AlertType.WARNING, "Sign In Unsuccessful", "Incorrect Credentials")
             }
