@@ -181,28 +181,6 @@ class subjectListItemView(val subjectModel: SubjectModel) : View("Student List I
                     paddingLeft = 30.0
                     paddingRight = 30.0
                 }
-//                button("Remove") {
-//                    hboxConstraints {
-//                        marginTop = 30.0
-//                        marginLeft = 20.0
-//                    }
-//                    action {
-//                    }
-//                    style {
-//                        fontSize = 20.px
-//                        borderWidth += box(2.5.px)
-//                        borderColor += box(Styles.yellowColor)
-//                        borderRadius += box(9.px)
-//                        fontFamily = "Source Sans Pro"
-//                        fontWeight = FontWeight.BOLD
-//                        textFill = Color.WHITE
-//                        backgroundColor = multi(Color.TRANSPARENT, Color.TRANSPARENT, Color.TRANSPARENT)
-//                    }
-//                    useMaxWidth = true
-//                    paddingAll = 10.0
-//                    paddingLeft = 30.0
-//                    paddingRight = 30.0
-//                }
             }
         }
     }

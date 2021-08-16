@@ -75,7 +75,7 @@ class SearchBarViewSubjects : View("Search Bar View Subjects") {
             fieldset {
                 labelPosition = Orientation.HORIZONTAL
                 field() {
-                    textfield("Search for subject by name or code") {
+                    textfield() {
                         style {
                             textFill = Color.WHITE
                             backgroundColor = multi(
@@ -89,7 +89,7 @@ class SearchBarViewSubjects : View("Search Bar View Subjects") {
                             borderRadius += box(9.px)
                             borderColor += box(Styles.darkBlueColor)
                         }
-                    }
+                    }.promptText = "Search for subject by name or code"
                 }
             }
         }
