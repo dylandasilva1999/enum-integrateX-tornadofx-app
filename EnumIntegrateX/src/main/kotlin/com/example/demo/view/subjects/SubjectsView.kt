@@ -9,6 +9,8 @@ import com.example.demo.view.login.LoginView
 import com.example.demo.view.searchbar.SearchBarViewSubjects
 import com.example.demo.view.staff.StaffView
 import com.example.demo.view.students.StudentsView
+import com.example.demo.view.students.studentEditorView.studentEditorView
+import com.example.demo.view.students.studentEditorView.subjectEditorView
 import com.example.demo.view.students.studentListItemView.subjectListItemView
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
@@ -303,7 +305,7 @@ class SubjectsView : View("Subjects View") {
                         marginBottom = 15.0
                     }
                     action {
-                        //Action here
+                        openInternalWindow<subjectEditorView>()
                     }
                     style {
                         fontSize = 20.px

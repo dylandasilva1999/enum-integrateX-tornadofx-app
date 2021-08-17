@@ -4,7 +4,7 @@ import javafx.beans.property.SimpleIntegerProperty
 import javafx.beans.property.SimpleStringProperty
 import tornadofx.*
 
-class Subject(name: String, code: String, image: String, lecturer: String, credits: Int, hoursPerWeek: Int, pricePerMonth: Int, students: Int) {
+class Subject(name: String, code: String, image: String, lecturer: String, credits: Int, hoursPerWeek: Int, pricePerMonth: Int, studentsTotal: Int, description: String) {
     val nameProperty = SimpleStringProperty(name)
     val codeProperty = SimpleStringProperty(code)
     val imageProperty = SimpleStringProperty(image)
@@ -12,7 +12,8 @@ class Subject(name: String, code: String, image: String, lecturer: String, credi
     val creditsProperty = SimpleIntegerProperty(credits)
     val hoursPerWeekProperty = SimpleIntegerProperty(hoursPerWeek)
     val pricePerMonthProperty = SimpleIntegerProperty(pricePerMonth)
-    val studentsProperty = SimpleIntegerProperty(students)
+    val studentsTotalProperty = SimpleIntegerProperty(studentsTotal)
+    val descriptionProperty = SimpleStringProperty(description)
 }
 
 class SubjectModel(val subject: Subject): ViewModel() {
@@ -23,5 +24,6 @@ class SubjectModel(val subject: Subject): ViewModel() {
     val credits = bind{subject.creditsProperty}
     val hoursPerWeek = bind{subject.hoursPerWeekProperty}
     val pricePerMonth = bind{subject.pricePerMonthProperty}
-    val students = bind{subject.studentsProperty}
+    val studentsTotal = bind{subject.studentsTotalProperty}
+    val description = bind{subject.descriptionProperty}
 }

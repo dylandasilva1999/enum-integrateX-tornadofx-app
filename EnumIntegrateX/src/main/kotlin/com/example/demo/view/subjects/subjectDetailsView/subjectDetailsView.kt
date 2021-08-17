@@ -20,6 +20,20 @@ class subjectDetailsView() : Fragment("Student Details View") {
             backgroundColor = multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
         }
 
+        fun subjectCardsColour(): Color {
+            return when (subjectModel.name.value) {
+                "Creative Computing" -> Styles.ccColor
+                "Interaction Design" -> Styles.idColor
+                "3D Design" -> Styles.ddColor
+                "Illustration" -> Styles.ilColor
+                "Motion Design" -> Styles.mdColor
+                "Photography" -> Styles.pgColor
+                "Game Design" -> Styles.gdColor
+                "Visual Culture" -> Styles.vcColor
+                else -> Styles.mutedDarkBlueColor
+            }
+        }
+
         stackpane {
             stackpaneConstraints {
                 paddingTop = -100.0
@@ -80,7 +94,7 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                 fontFamily = "Source Sans Pro"
                             }
                         }
-                        label("Student") {
+                        label("Subject") {
                             vboxConstraints {
                                 marginTop = 0.0
                                 marginLeft = 60.0
@@ -101,14 +115,14 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                 rectangle {
                                     arcHeight = 20.0
                                     arcWidth = 20.0
-                                    width = 180.0
+                                    width = 110.0
                                     height = 90.0
                                     strokeWidth = 1.0
-                                    fill = Styles.blueColor
+                                    fill = subjectCardsColour()
                                     opacity = 1.0
                                 }
                                 vbox {
-                                    label("ID") {
+                                    label("Code") {
                                         vboxConstraints {
                                             marginTop = 15.0
                                             marginLeft = 20.0
@@ -120,7 +134,7 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                             fontFamily = "Source Sans Pro"
                                         }
                                     }
-                                    label(subjectModel.hoursPerWeek) {
+                                    label(subjectModel.code) {
                                         vboxConstraints {
                                             marginTop = 10.0
                                             marginLeft = 20.0
@@ -142,10 +156,51 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                 rectangle {
                                     arcHeight = 20.0
                                     arcWidth = 20.0
-                                    width = 150.0
+                                    width = 360.0
                                     height = 90.0
                                     strokeWidth = 1.0
-                                    fill = Styles.yellowColor
+                                    fill = subjectCardsColour()
+                                    opacity = 1.0
+                                }
+                                vbox {
+                                    label("Lecturer") {
+                                        vboxConstraints {
+                                            marginTop = 15.0
+                                            marginLeft = 20.0
+                                        }
+                                        style {
+                                            fontWeight = FontWeight.NORMAL
+                                            textFill = Color.WHITE
+                                            fontSize = 18.px
+                                            fontFamily = "Source Sans Pro"
+                                        }
+                                    }
+                                    label(subjectModel.lecturer) {
+                                        vboxConstraints {
+                                            marginTop = 5.0
+                                            marginLeft = 20.0
+                                        }
+                                        style {
+                                            fontWeight = FontWeight.BOLD
+                                            textFill = Color.WHITE
+                                            fontSize = 24.px
+                                            fontFamily = "Source Sans Pro"
+                                        }
+                                    }
+                                }
+                            }
+                            stackpane {
+                                stackpaneConstraints {
+                                    paddingLeft = 15.0
+                                    paddingTop = 30.0
+                                }
+                                rectangle {
+                                    arcHeight = 20.0
+                                    arcWidth = 20.0
+                                    width = 120.0
+                                    height = 90.0
+                                    strokeWidth = 1.0
+                                    fill = subjectCardsColour()
                                     opacity = 1.0
                                 }
                                 vbox {
@@ -175,47 +230,6 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                     }
                                 }
                             }
-                            stackpane {
-                                stackpaneConstraints {
-                                    paddingLeft = 15.0
-                                    paddingTop = 30.0
-                                }
-                                rectangle {
-                                    arcHeight = 20.0
-                                    arcWidth = 20.0
-                                    width = 260.0
-                                    height = 90.0
-                                    strokeWidth = 1.0
-                                    fill = Styles.orangeColor
-                                    opacity = 1.0
-                                }
-                                vbox {
-                                    label("Type of education") {
-                                        vboxConstraints {
-                                            marginTop = 15.0
-                                            marginLeft = 20.0
-                                        }
-                                        style {
-                                            fontWeight = FontWeight.NORMAL
-                                            textFill = Color.WHITE
-                                            fontSize = 18.px
-                                            fontFamily = "Source Sans Pro"
-                                        }
-                                    }
-                                    label(subjectModel.lecturer) {
-                                        vboxConstraints {
-                                            marginTop = 5.0
-                                            marginLeft = 20.0
-                                        }
-                                        style {
-                                            fontWeight = FontWeight.BOLD
-                                            textFill = Color.WHITE
-                                            fontSize = 24.px
-                                            fontFamily = "Source Sans Pro"
-                                        }
-                                    }
-                                }
-                            }
                         }
                         hbox {
                             stackpane {
@@ -229,11 +243,11 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                     width = 345.0
                                     height = 115.0
                                     strokeWidth = 1.0
-                                    fill = Styles.mutedDarkBlueColor
+                                    fill = subjectCardsColour()
                                     opacity = 1.0
                                 }
                                 vbox {
-                                    label("Subjects Taken") {
+                                    label("Description") {
                                         vboxConstraints {
                                             marginTop = 15.0
                                             marginLeft = 20.0
@@ -245,7 +259,49 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                             fontFamily = "Source Sans Pro"
                                         }
                                     }
-                                    label(subjectModel.lecturer) {
+                                    label(subjectModel.description) {
+                                        vboxConstraints {
+                                            marginTop = 15.0
+                                            marginLeft = 20.0
+                                        }
+                                        style {
+                                            fontWeight = FontWeight.BOLD
+                                            textFill = Color.WHITE
+                                            fontSize = 16.px
+                                            fontFamily = "Source Sans Pro"
+                                        }
+                                        maxWidth = 200.0
+                                    }
+                                }
+                            }
+                            stackpane {
+                                stackpaneConstraints {
+                                    paddingLeft = 15.0
+                                    paddingTop = 15.0
+                                }
+                                rectangle {
+                                    arcHeight = 20.0
+                                    arcWidth = 20.0
+                                    width = 200.0
+                                    height = 115.0
+                                    strokeWidth = 1.0
+                                    fill = subjectCardsColour()
+                                    opacity = 1.0
+                                }
+                                vbox {
+                                    label("Hours per week") {
+                                        vboxConstraints {
+                                            marginTop = 15.0
+                                            marginLeft = 20.0
+                                        }
+                                        style {
+                                            fontWeight = FontWeight.NORMAL
+                                            textFill = Color.WHITE
+                                            fontSize = 18.px
+                                            fontFamily = "Source Sans Pro"
+                                        }
+                                    }
+                                    label(subjectModel.hoursPerWeek) {
                                         vboxConstraints {
                                             marginTop = 15.0
                                             marginLeft = 20.0
@@ -267,14 +323,14 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                 rectangle {
                                     arcHeight = 20.0
                                     arcWidth = 20.0
-                                    width = 260.0
+                                    width = 200.0
                                     height = 115.0
                                     strokeWidth = 1.0
-                                    fill = Styles.mutedDarkBlueColor
+                                    fill = subjectCardsColour()
                                     opacity = 1.0
                                 }
                                 vbox {
-                                    label("Total fees for subjects") {
+                                    label("Price per month") {
                                         vboxConstraints {
                                             marginTop = 15.0
                                             marginLeft = 20.0
@@ -300,47 +356,6 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                     }
                                 }
                             }
-                            stackpane {
-                                stackpaneConstraints {
-                                    paddingLeft = 15.0
-                                    paddingTop = 15.0
-                                }
-                                rectangle {
-                                    arcHeight = 20.0
-                                    arcWidth = 20.0
-                                    width = 320.0
-                                    height = 115.0
-                                    strokeWidth = 1.0
-                                    fill = Styles.mutedDarkBlueColor
-                                    opacity = 1.0
-                                }
-                                vbox {
-                                    label("Student Email") {
-                                        vboxConstraints {
-                                            marginTop = 15.0
-                                            marginLeft = 20.0
-                                        }
-                                        style {
-                                            fontWeight = FontWeight.NORMAL
-                                            textFill = Color.WHITE
-                                            fontSize = 18.px
-                                            fontFamily = "Source Sans Pro"
-                                        }
-                                    }
-                                    label(subjectModel.code) {
-                                        vboxConstraints {
-                                            marginTop = 30.0
-                                            marginLeft = 20.0
-                                        }
-                                        style {
-                                            fontWeight = FontWeight.BOLD
-                                            textFill = Color.WHITE
-                                            fontSize = 20.px
-                                            fontFamily = "Source Sans Pro"
-                                        }
-                                    }
-                                }
-                            }
                         }
                     }
                 }
@@ -356,13 +371,13 @@ class subjectDetailsView() : Fragment("Student Details View") {
                 style {
                     fontSize = 20.px
                     borderWidth += box(2.5.px)
-                    borderColor += box(Styles.orangeColor)
+                    borderColor += box(Styles.mutedDarkBlueColor)
                     backgroundRadius += box(9.px)
                     borderRadius += box(8.px)
                     fontFamily = "Source Sans Pro"
                     fontWeight = FontWeight.BOLD
                     textFill = Color.WHITE
-                    backgroundColor = multi(Color.TRANSPARENT, Color.TRANSPARENT, Color.TRANSPARENT)
+                    backgroundColor = multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
                 }
                 useMaxWidth = false
                 paddingAll = 12.0

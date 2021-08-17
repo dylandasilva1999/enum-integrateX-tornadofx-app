@@ -356,13 +356,13 @@ class studentDetailsView() : Fragment("Student Details View") {
                 style {
                     fontSize = 20.px
                     borderWidth += box(2.5.px)
-                    borderColor += box(Styles.orangeColor)
+                    borderColor += box(Styles.mutedDarkBlueColor)
                     backgroundRadius += box(9.px)
                     borderRadius += box(8.px)
                     fontFamily = "Source Sans Pro"
                     fontWeight = FontWeight.BOLD
                     textFill = Color.WHITE
-                    backgroundColor = multi(Color.TRANSPARENT, Color.TRANSPARENT, Color.TRANSPARENT)
+                    backgroundColor = multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
                 }
                 useMaxWidth = false
                 paddingAll = 12.0

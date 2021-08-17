@@ -35,7 +35,7 @@ class StudentEditorController: Controller() {
     var studentSubjects = FXCollections.observableArrayList(subjectsList[0].codeProperty.value,
         subjectsList[1].codeProperty.value, subjectsList[2].codeProperty.value,
         subjectsList[3].codeProperty.value, subjectsList[4].codeProperty.value,
-        subjectsList[5].codeProperty.value)
+        subjectsList[5].codeProperty.value, subjectsList[6].codeProperty.value)
     var studentFees = SimpleIntegerProperty()
 
     var totalStudentSubjects = SimpleStringProperty()

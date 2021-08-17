@@ -28,7 +28,8 @@ class subjectListItemView(val subjectModel: SubjectModel) : View("Student List I
             subjectModel.credits.value,
             subjectModel.hoursPerWeek.value,
             subjectModel.pricePerMonth.value,
-            subjectModel.students.value
+            subjectModel.studentsTotal.value,
+            subjectModel.description.value,
         )
         return selectedSubject
     }
@@ -145,7 +146,7 @@ class subjectListItemView(val subjectModel: SubjectModel) : View("Student List I
                     }
                     minWidth = 80.0
                 }
-                label(subjectModel.students) {
+                label(subjectModel.studentsTotal) {
                     hboxConstraints {
                         marginTop = 42.0
                         marginLeft = 50.0
