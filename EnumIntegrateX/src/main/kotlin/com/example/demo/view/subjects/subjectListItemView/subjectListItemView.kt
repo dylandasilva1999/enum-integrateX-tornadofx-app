@@ -161,7 +161,7 @@ class subjectListItemView(val subjectModel: SubjectModel) : View("Student List I
                 button("View Subject Details") {
                     hboxConstraints {
                         marginTop = 30.0
-                        marginLeft = 70.0
+                        marginLeft = 85.0
                     }
                     action {
                         getSubject()
