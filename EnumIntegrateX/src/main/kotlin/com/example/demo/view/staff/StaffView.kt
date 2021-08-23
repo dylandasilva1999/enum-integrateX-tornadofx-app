@@ -337,7 +337,7 @@ class StaffView : View("Staff View") {
                 }
                 useMaxWidth = true
                 add(searchBarViewStaff)
-                button("+ Add a student") {
+                button("+ Add staff") {
                     hboxConstraints {
                         marginLeft = 15.0
                         marginBottom = 15.0
