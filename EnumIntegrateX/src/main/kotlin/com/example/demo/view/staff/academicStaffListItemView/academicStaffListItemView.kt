@@ -14,23 +14,24 @@ class academicStaffListItemView(val academicStaff: AcademicStaffModel) : View("A
     //Academic Staff List
     val academicStaffList = academicStaffController.academicStaffList
 
-    fun getAdminStaff(): AcademicStaff {
-        val selectedAdminStaff = AcademicStaff(
+    fun getAcademicStaff(): AcademicStaff {
+        val selectedAcademicStaff = AcademicStaff(
             academicStaff.title.value,
             academicStaff.fullName.value,
             academicStaff.image.value,
             academicStaff.idNumber.value,
+            academicStaff.email.value,
             academicStaff.role.value,
             academicStaff.subjectsTeaching.value,
             academicStaff.hoursWorked.value,
             academicStaff.salary.value
         )
-        return selectedAdminStaff
+        return selectedAcademicStaff
     }
 
     override val root = vbox {
 
-        val academicStaffModel = AcademicStaffModel(getAdminStaff())
+        val academicStaffModel = AcademicStaffModel(getAcademicStaff())
 
         val fragmentScope = Scope()
         setInScope(academicStaffModel, fragmentScope)
@@ -120,7 +121,7 @@ class academicStaffListItemView(val academicStaff: AcademicStaffModel) : View("A
                         marginLeft = 200.0
                     }
                     action {
-                        getAdminStaff()
+                        getAcademicStaff()
                         changeView()
                     }
                     style {

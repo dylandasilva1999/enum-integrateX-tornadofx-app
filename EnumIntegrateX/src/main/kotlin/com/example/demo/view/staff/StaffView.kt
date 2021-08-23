@@ -11,6 +11,8 @@ import com.example.demo.view.dashboard.DashboardView
 import com.example.demo.view.funds.FundsView
 import com.example.demo.view.login.LoginView
 import com.example.demo.view.searchbar.SearchBarViewStaff
+import com.example.demo.view.students.studentEditorView.academicStaffEditorView
+import com.example.demo.view.students.studentEditorView.adminStaffEditorView
 import com.example.demo.view.students.studentListItemView.academicStaffListItemView
 import com.example.demo.view.students.studentListItemView.adminStaffListItemView
 import javafx.geometry.Pos
@@ -337,13 +339,33 @@ class StaffView : View("Staff View") {
                 }
                 useMaxWidth = true
                 add(searchBarViewStaff)
-                button("+ Add staff") {
+                button("+ Add academic staff") {
                     hboxConstraints {
                         marginLeft = 15.0
                         marginBottom = 15.0
                     }
                     action {
-                        //openInternalWindow<studentEditorView>()
+                        openInternalWindow<academicStaffEditorView>()
+                    }
+                    style {
+                        fontSize = 20.px
+                        borderWidth += box(1.5.px)
+                        backgroundRadius += box(9.px)
+                        fontFamily = "Source Sans Pro"
+                        fontWeight = FontWeight.BOLD
+                        textFill = Color.WHITE
+                        backgroundColor = multi(Styles.blueColor, Styles.blueColor, Styles.blueColor)
+                    }
+                    useMaxWidth = true
+                    paddingAll = 15.0
+                }
+                button("+ Add admin staff") {
+                    hboxConstraints {
+                        marginLeft = 15.0
+                        marginBottom = 15.0
+                    }
+                    action {
+                        openInternalWindow<adminStaffEditorView>()
                     }
                     style {
                         fontSize = 20.px
@@ -411,6 +433,49 @@ class StaffView : View("Staff View") {
                     }
                 }
                 academicStaffList.onChange {
+                    // Clear View
+                    this.clear()
+                    vbox {
+                        label("Staff") {
+                            vboxConstraints {
+                                marginTop = 0.0
+                                marginLeft = 12.0
+                            }
+                            style {
+                                fontWeight = FontWeight.BOLD
+                                textFill = Color.WHITE
+                                fontSize = 36.px
+                                fontFamily = "Source Sans Pro"
+                            }
+                        }
+                        scrollpane {
+                            style {
+                                baseColor = Styles.mutedDarkBlueColor
+                                focusColor = Color.TRANSPARENT
+                                edgeToEdge = true
+                                pannable = true
+                            }
+                            borderpane {
+                                style {
+                                    backgroundColor += Styles.mutedDarkBlueColor
+                                }
+                                center = vbox {
+                                    vboxConstraints {
+                                        paddingLeft = 5.0
+                                    }
+                                    for (academicStaff in academicStaffList) {
+                                        add(academicStaffListItemView(AcademicStaffModel(academicStaff)))
+                                    }
+                                    for (adminStaff in adminStaffList) {
+                                        add(adminStaffListItemView(AdminStaffModel(adminStaff)))
+                                    }
+                                }
+                            }
+                            prefHeight = 840.0
+                        }
+                    }
+                }
+                adminStaffList.onChange {
                     // Clear View
                     this.clear()
                     vbox {

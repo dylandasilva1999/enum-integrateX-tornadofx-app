@@ -124,7 +124,7 @@ class SearchBarViewStaff : View("Search Bar View Staff") {
                 fontSize = 20.px
                 fontWeight = FontWeight.BOLD
                 fontFamily = "Source Sans Pro"
-                prefWidth = 1190.px
+                prefWidth = 940.px
             }
             useMaxWidth = true
             fieldset {

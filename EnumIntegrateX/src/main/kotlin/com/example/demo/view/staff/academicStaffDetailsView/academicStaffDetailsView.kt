@@ -143,7 +143,7 @@ class academicStaffDetailsView() : Fragment("Academic Staff Details View") {
                                 rectangle {
                                     arcHeight = 20.0
                                     arcWidth = 20.0
-                                    width = 150.0
+                                    width = 300.0
                                     height = 90.0
                                     strokeWidth = 1.0
                                     fill = Styles.yellowColor
@@ -296,6 +296,47 @@ class academicStaffDetailsView() : Fragment("Academic Staff Details View") {
                                             fontWeight = FontWeight.BOLD
                                             textFill = Color.WHITE
                                             fontSize = 35.px
+                                            fontFamily = "Source Sans Pro"
+                                        }
+                                    }
+                                }
+                            }
+                            stackpane {
+                                stackpaneConstraints {
+                                    paddingLeft = 15.0
+                                    paddingTop = 15.0
+                                }
+                                rectangle {
+                                    arcHeight = 20.0
+                                    arcWidth = 20.0
+                                    width = 260.0
+                                    height = 115.0
+                                    strokeWidth = 1.0
+                                    fill = Styles.mutedDarkBlueColor
+                                    opacity = 1.0
+                                }
+                                vbox {
+                                    label("Staff Email") {
+                                        vboxConstraints {
+                                            marginTop = 15.0
+                                            marginLeft = 20.0
+                                        }
+                                        style {
+                                            fontWeight = FontWeight.NORMAL
+                                            textFill = Color.WHITE
+                                            fontSize = 18.px
+                                            fontFamily = "Source Sans Pro"
+                                        }
+                                    }
+                                    label(academicStaffModel.email.value) {
+                                        vboxConstraints {
+                                            marginTop = 35.0
+                                            marginLeft = 20.0
+                                        }
+                                        style {
+                                            fontWeight = FontWeight.BOLD
+                                            textFill = Color.WHITE
+                                            fontSize = 16.px
                                             fontFamily = "Source Sans Pro"
                                         }
                                     }

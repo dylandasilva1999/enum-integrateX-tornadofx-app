@@ -255,7 +255,7 @@ class adminStaffDetailsView() : Fragment("Admin Staff Details View") {
                                         style {
                                             fontWeight = FontWeight.BOLD
                                             textFill = Color.WHITE
-                                            fontSize = 35.px
+                                            fontSize = 22.px
                                             fontFamily = "Source Sans Pro"
                                         }
                                     }
