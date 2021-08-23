@@ -141,7 +141,7 @@ class StaffView : View("Staff View") {
                     }
                     button("Staff") {
                         action {
-                            find(StaffView::class).replaceWith(StaffView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
+                            find(StaffView::class).refreshable
                         }
                         vboxConstraints {
                             marginTop = 10.0

@@ -123,7 +123,7 @@ class SubjectsView : View("Subjects View") {
                     }
                     button("Subjects") {
                         action {
-                            find(SubjectsView::class).replaceWith(SubjectsView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
+                            find(SubjectsView::class).refreshable
                         }
                         vboxConstraints {
                             marginTop = 10.0

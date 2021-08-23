@@ -102,11 +102,7 @@ class StudentsView : View("Students View") {
                     }
                     button("Students") {
                         action {
-                            find(StudentsView::class).replaceWith(
-                                StudentsView::class,
-                                sizeToScene = true,
-                                centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds)
-                            )
+                            find(StudentsView::class).refreshable
                         }
                         vboxConstraints {
                             marginTop = 10.0

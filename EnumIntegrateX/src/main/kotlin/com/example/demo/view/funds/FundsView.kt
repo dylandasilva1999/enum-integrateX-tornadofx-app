@@ -163,7 +163,7 @@ class FundsView : View("Funds View") {
                     }
                     button("Funds") {
                         action {
-                            find(FundsView::class).replaceWith(FundsView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
+                            find(FundsView::class).refreshable
                         }
                         vboxConstraints {
                             marginTop = 10.0

@@ -76,7 +76,7 @@ class DashboardView : View("Dashboard View") {
                     }
                     button("Dashboard") {
                         action {
-                            find(DashboardView::class).replaceWith(DashboardView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
+                            find(DashboardView::class).refreshable
                         }
                         vboxConstraints {
                             marginTop = 20.0
