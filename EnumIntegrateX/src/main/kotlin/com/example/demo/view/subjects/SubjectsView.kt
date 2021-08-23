@@ -296,6 +296,7 @@ class SubjectsView : View("Subjects View") {
             hbox {
                 hboxConstraints {
                     alignment = Pos.CENTER_LEFT
+                    paddingTop = 16.0
                 }
                 useMaxWidth = true
                 add(searchBarViewSubjects)
@@ -454,7 +455,7 @@ class SubjectsView : View("Subjects View") {
                                 }
                             }
                         }
-                        prefHeight = 820.0
+                        prefHeight = 800.0
                     }
                 }
                 subjectList.onChange {
@@ -493,7 +494,7 @@ class SubjectsView : View("Subjects View") {
                                     }
                                 }
                             }
-                            prefHeight = 840.0
+                            prefHeight = 800.0
                         }
                     }
                 }

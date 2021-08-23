@@ -1,13 +1,18 @@
 package com.example.demo.view.staff
 
 import com.example.demo.app.Styles
+import com.example.demo.controller.staff.AcademicStaffController
 import com.example.demo.controller.staff.AdminStaffController
+import com.example.demo.model.AcademicStaffModel
+import com.example.demo.model.AdminStaffModel
 import com.example.demo.view.students.StudentsView
 import com.example.demo.view.subjects.SubjectsView
 import com.example.demo.view.dashboard.DashboardView
 import com.example.demo.view.funds.FundsView
 import com.example.demo.view.login.LoginView
 import com.example.demo.view.searchbar.SearchBarViewStaff
+import com.example.demo.view.students.studentListItemView.academicStaffListItemView
+import com.example.demo.view.students.studentListItemView.adminStaffListItemView
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
@@ -15,8 +20,23 @@ import tornadofx.*
 
 class StaffView : View("Staff View") {
 
-    //Instance of staffController
+    //Instance of adminStaffController
     val adminStaffController: AdminStaffController by inject()
+
+    //Academic Staff List
+    val adminStaffList = adminStaffController.adminStaffList
+
+    //Academic Staff
+    val adminStaff: AdminStaffModel by inject()
+
+    //Instance of academicStaffController
+    val academicStaffController: AcademicStaffController by inject()
+
+    //Academic Staff List
+    val academicStaffList = academicStaffController.academicStaffList
+
+    //Academic Staff
+    val academicStaff: AcademicStaffModel by inject()
 
     //SearchBarView
     val searchBarViewStaff: SearchBarViewStaff by inject()
@@ -62,7 +82,12 @@ class StaffView : View("Staff View") {
                     }
                     button("Dashboard") {
                         action {
-                            find(StaffView::class).replaceWith(DashboardView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
+                            find(StaffView::class).replaceWith(
+                                DashboardView::class,
+                                sizeToScene = true,
+                                centerOnScreen = true,
+                                transition = ViewTransition.Fade(0.2.seconds)
+                            )
                         }
                         vboxConstraints {
                             marginTop = 20.0
@@ -89,7 +114,12 @@ class StaffView : View("Staff View") {
                     }
                     button("Students") {
                         action {
-                            find(StaffView::class).replaceWith(StudentsView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
+                            find(StaffView::class).replaceWith(
+                                StudentsView::class,
+                                sizeToScene = true,
+                                centerOnScreen = true,
+                                transition = ViewTransition.Fade(0.2.seconds)
+                            )
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -115,7 +145,12 @@ class StaffView : View("Staff View") {
                     }
                     button("Subjects") {
                         action {
-                            find(StaffView::class).replaceWith(SubjectsView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
+                            find(StaffView::class).replaceWith(
+                                SubjectsView::class,
+                                sizeToScene = true,
+                                centerOnScreen = true,
+                                transition = ViewTransition.Fade(0.2.seconds)
+                            )
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -160,14 +195,20 @@ class StaffView : View("Staff View") {
                             fontFamily = "Source Sans Pro"
                             fontWeight = FontWeight.BOLD
                             textFill = Color.WHITE
-                            backgroundColor = multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
+                            backgroundColor =
+                                multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
                         }
                         paddingAll = 12.0
                         paddingLeft = 40.0
                     }
                     button("Funds") {
                         action {
-                            find(StaffView::class).replaceWith(FundsView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Fade(0.2.seconds))
+                            find(StaffView::class).replaceWith(
+                                FundsView::class,
+                                sizeToScene = true,
+                                centerOnScreen = true,
+                                transition = ViewTransition.Fade(0.2.seconds)
+                            )
                         }
                         vboxConstraints {
                             marginTop = 10.0
@@ -266,7 +307,12 @@ class StaffView : View("Staff View") {
                                 marginRight = 55.0
                             }
                             action {
-                                find(StaffView::class).replaceWith(LoginView::class, sizeToScene = true, centerOnScreen = true, transition = ViewTransition.Slide(0.5.seconds))
+                                find(StaffView::class).replaceWith(
+                                    LoginView::class,
+                                    sizeToScene = true,
+                                    centerOnScreen = true,
+                                    transition = ViewTransition.Slide(0.5.seconds)
+                                )
                             }
                             style {
                                 fontSize = 20.px
@@ -291,13 +337,13 @@ class StaffView : View("Staff View") {
                 }
                 useMaxWidth = true
                 add(searchBarViewStaff)
-                button("+ Add a staff") {
+                button("+ Add a student") {
                     hboxConstraints {
                         marginLeft = 15.0
                         marginBottom = 15.0
                     }
                     action {
-                        //Action here
+                        //openInternalWindow<studentEditorView>()
                     }
                     style {
                         fontSize = 20.px
@@ -310,8 +356,6 @@ class StaffView : View("Staff View") {
                     }
                     useMaxWidth = true
                     paddingAll = 15.0
-                    paddingLeft = 29.0
-                    paddingRight = 29.0
                 }
             }
             vboxConstraints {
@@ -338,6 +382,74 @@ class StaffView : View("Staff View") {
                             textFill = Color.WHITE
                             fontSize = 36.px
                             fontFamily = "Source Sans Pro"
+                        }
+                    }
+                    scrollpane {
+                        style {
+                            baseColor = Styles.mutedDarkBlueColor
+                            focusColor = Color.TRANSPARENT
+                            edgeToEdge = true
+                            pannable = true
+                        }
+                        borderpane {
+                            style {
+                                backgroundColor += Styles.mutedDarkBlueColor
+                            }
+                            center = vbox {
+                                vboxConstraints {
+                                    paddingLeft = 5.0
+                                }
+                                for (academicStaff in academicStaffList) {
+                                    add(academicStaffListItemView(AcademicStaffModel(academicStaff)))
+                                }
+                                for (adminStaff in adminStaffList) {
+                                    add(adminStaffListItemView(AdminStaffModel(adminStaff)))
+                                }
+                            }
+                        }
+                        prefHeight = 840.0
+                    }
+                }
+                academicStaffList.onChange {
+                    // Clear View
+                    this.clear()
+                    vbox {
+                        label("Staff") {
+                            vboxConstraints {
+                                marginTop = 0.0
+                                marginLeft = 12.0
+                            }
+                            style {
+                                fontWeight = FontWeight.BOLD
+                                textFill = Color.WHITE
+                                fontSize = 36.px
+                                fontFamily = "Source Sans Pro"
+                            }
+                        }
+                        scrollpane {
+                            style {
+                                baseColor = Styles.mutedDarkBlueColor
+                                focusColor = Color.TRANSPARENT
+                                edgeToEdge = true
+                                pannable = true
+                            }
+                            borderpane {
+                                style {
+                                    backgroundColor += Styles.mutedDarkBlueColor
+                                }
+                                center = vbox {
+                                    vboxConstraints {
+                                        paddingLeft = 5.0
+                                    }
+                                    for (academicStaff in academicStaffList) {
+                                        add(academicStaffListItemView(AcademicStaffModel(academicStaff)))
+                                    }
+                                    for (adminStaff in adminStaffList) {
+                                        add(adminStaffListItemView(AdminStaffModel(adminStaff)))
+                                    }
+                                }
+                            }
+                            prefHeight = 840.0
                         }
                     }
                 }

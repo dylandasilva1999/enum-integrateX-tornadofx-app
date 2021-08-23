@@ -10,9 +10,8 @@ import com.example.demo.view.login.LoginView
 import com.example.demo.view.searchbar.SearchBarViewStudents
 import com.example.demo.view.staff.StaffView
 import com.example.demo.view.students.studentEditorView.studentEditorView
-import com.example.demo.view.students.studentEditorView.subjectEditorView
+import com.example.demo.view.students.studentListItemView.adminStaffListItemView
 import com.example.demo.view.students.studentListItemView.studentListItemView
-import com.example.demo.view.students.studentListItemView.subjectListItemView
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight

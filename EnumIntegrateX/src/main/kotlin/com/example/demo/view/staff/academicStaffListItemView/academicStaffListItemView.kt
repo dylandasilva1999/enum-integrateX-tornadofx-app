@@ -1,42 +1,39 @@
 package com.example.demo.view.students.studentListItemView
 
 import com.example.demo.app.Styles
-import com.example.demo.controller.students.StudentsController
-import com.example.demo.model.Student
-import com.example.demo.model.StudentModel
+import com.example.demo.controller.staff.AcademicStaffController
+import com.example.demo.model.*
 import com.example.demo.view.students.studentDetailsView.academicStaffDetailsView
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*
 
-class studentListItemView(val studentModel: StudentModel) : View("Student List Item View") {
-    //Instance of studentsController
-    val studentsController: StudentsController by inject()
-    //Student List
-    val studentList = studentsController.studentsList
+class academicStaffListItemView(val academicStaff: AcademicStaffModel) : View("Academic Staff Item View") {
+    //Instance of academicStaffController
+    val academicStaffController: AcademicStaffController by inject()
+    //Academic Staff List
+    val academicStaffList = academicStaffController.academicStaffList
 
-    fun getStudent(): Student {
-        val selectedStudent = Student(
-            studentModel.id.value,
-            studentModel.title.value,
-            studentModel.fullName.value,
-            studentModel.email.value,
-            studentModel.image.value,
-            studentModel.idNumber.value,
-            studentModel.credits.value,
-            studentModel.education.value,
-            studentModel.subjects.value,
-            studentModel.fees.value
+    fun getAdminStaff(): AcademicStaff {
+        val selectedAdminStaff = AcademicStaff(
+            academicStaff.title.value,
+            academicStaff.fullName.value,
+            academicStaff.image.value,
+            academicStaff.idNumber.value,
+            academicStaff.role.value,
+            academicStaff.subjectsTeaching.value,
+            academicStaff.hoursWorked.value,
+            academicStaff.salary.value
         )
-        return selectedStudent
+        return selectedAdminStaff
     }
 
     override val root = vbox {
 
-        val studentModel = StudentModel(getStudent())
+        val academicStaffModel = AcademicStaffModel(getAdminStaff())
 
         val fragmentScope = Scope()
-        setInScope(studentModel, fragmentScope)
+        setInScope(academicStaffModel, fragmentScope)
 
         fun changeView() {
             this += find<academicStaffDetailsView>(fragmentScope)
@@ -56,7 +53,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                 opacity = 1.0
             }
             hbox {
-                imageview(studentModel.image) {
+                imageview(academicStaff.image) {
                     hboxConstraints {
                         marginTop = 18.0
                         marginLeft = 20.0
@@ -65,7 +62,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                     fitWidth = 75.0
                     isPreserveRatio = true
                 }
-                label(studentModel.title) {
+                label(academicStaff.title) {
                     hboxConstraints {
                         marginTop = 40.0
                         marginLeft = 40.0
@@ -78,7 +75,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                     }
                     minWidth = 50.0
                 }
-                label(studentModel.fullName) {
+                label(academicStaff.fullName) {
                     hboxConstraints {
                         marginTop = 40.0
                         marginLeft = 80.0
@@ -91,7 +88,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                     }
                     minWidth = 320.0
                 }
-                label(studentModel.idNumber) {
+                label(academicStaff.idNumber) {
                     hboxConstraints {
                         marginTop = 40.0
                         marginLeft = 50.0
@@ -104,7 +101,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                     }
                     minWidth = 150.0
                 }
-                label(studentModel.education) {
+                label(academicStaff.role) {
                     hboxConstraints {
                         marginTop = 40.0
                         marginLeft = 140.0
@@ -117,13 +114,13 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
                     }
                     minWidth = 80.0
                 }
-                button("View Student Details") {
+                button("View Staff Details") {
                     hboxConstraints {
                         marginTop = 30.0
-                        marginLeft = 170.0
+                        marginLeft = 200.0
                     }
                     action {
-                        getStudent()
+                        getAdminStaff()
                         changeView()
                     }
                     style {

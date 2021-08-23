@@ -130,7 +130,7 @@ class SearchBarViewStaff : View("Search Bar View Staff") {
             fieldset {
                 labelPosition = Orientation.HORIZONTAL
                 field() {
-                    textfield("Search for staff member by name or ID") {
+                    textfield() {
                         style {
                             textFill = Color.WHITE
                             backgroundColor = multi(
@@ -144,7 +144,7 @@ class SearchBarViewStaff : View("Search Bar View Staff") {
                             borderRadius += box(9.px)
                             borderColor += box(Styles.darkBlueColor)
                         }
-                    }
+                    }.promptText = "Search for staff member by name or ID"
                 }
             }
         }
