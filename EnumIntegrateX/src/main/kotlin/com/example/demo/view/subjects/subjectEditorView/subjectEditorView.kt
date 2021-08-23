@@ -32,7 +32,7 @@ class subjectEditorView : View("Add Student View") {
             backgroundColor = multi(Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor, Styles.mutedDarkBlueColor)
         }
         setPrefSize(500.0, 500.0)
-        label("Add a student") {
+        label("Add a subject") {
             vboxConstraints {
                 marginTop = 0.0
                 marginLeft = 12.0

@@ -346,6 +346,94 @@ class SubjectsView : View("Subjects View") {
                             fontFamily = "Source Sans Pro"
                         }
                     }
+                    hbox {
+                        label("Name") {
+                            hboxConstraints {
+                                marginTop = 0.0
+                                marginLeft = 12.0
+                            }
+                            style {
+                                fontWeight = FontWeight.BOLD
+                                textFill = Color.WHITE
+                                fontSize = 18.px
+                                fontFamily = "Source Sans Pro"
+                            }
+                        }
+                        label("Code") {
+                            hboxConstraints {
+                                marginTop = 0.0
+                                marginLeft = 315.0
+                            }
+                            style {
+                                fontWeight = FontWeight.BOLD
+                                textFill = Color.WHITE
+                                fontSize = 18.px
+                                fontFamily = "Source Sans Pro"
+                            }
+                        }
+                        label("Lecturer") {
+                            hboxConstraints {
+                                marginTop = 0.0
+                                marginLeft = 40.0
+                            }
+                            style {
+                                fontWeight = FontWeight.BOLD
+                                textFill = Color.WHITE
+                                fontSize = 18.px
+                                fontFamily = "Source Sans Pro"
+                            }
+                        }
+                        label("Credits") {
+                            hboxConstraints {
+                                marginTop = 0.0
+                                marginLeft = 220.0
+                            }
+                            style {
+                                fontWeight = FontWeight.BOLD
+                                textFill = Color.WHITE
+                                fontSize = 18.px
+                                fontFamily = "Source Sans Pro"
+                            }
+                        }
+                        label("Hours") {
+                            hboxConstraints {
+                                marginTop = 0.0
+                                marginLeft = 45.0
+                            }
+                            style {
+                                fontWeight = FontWeight.BOLD
+                                textFill = Color.WHITE
+                                fontSize = 18.px
+                                fontFamily = "Source Sans Pro"
+                            }
+                        }
+                        label("Price") {
+                            hboxConstraints {
+                                marginTop = 0.0
+                                marginLeft = 55.0
+                            }
+                            style {
+                                fontWeight = FontWeight.BOLD
+                                textFill = Color.WHITE
+                                fontSize = 18.px
+                                fontFamily = "Source Sans Pro"
+                            }
+                        }
+                        label("Students") {
+                            hboxConstraints {
+                                marginTop = 0.0
+                                marginLeft = 85.0
+                            }
+                            style {
+                                fontWeight = FontWeight.BOLD
+                                textFill = Color.WHITE
+                                fontSize = 18.px
+                                fontFamily = "Source Sans Pro"
+                            }
+                        }
+                        paddingTop = 10.0
+                        paddingBottom = 10.0
+                    }
                     scrollpane {
                         style {
                             baseColor = Styles.mutedDarkBlueColor
@@ -366,7 +454,7 @@ class SubjectsView : View("Subjects View") {
                                 }
                             }
                         }
-                        prefHeight = 840.0
+                        prefHeight = 820.0
                     }
                 }
                 subjectList.onChange {
