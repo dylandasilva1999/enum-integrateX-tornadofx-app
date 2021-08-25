@@ -148,6 +148,13 @@ class subjectEditorView : View("Add Student View") {
                     vboxConstraints {
                         paddingTop = 20.0
                     }
+                    label {
+                        text = "Select the subject credits"
+                        style {
+                            textFill = Color.WHITE
+                        }
+                        maxWidth = 180.0
+                    }
                     combobox(subjectEditorController.selectedCredits, subjectEditorController.subjectCredits) {
                         style {
                             textFill = Styles.darkBlueColor
@@ -163,11 +170,19 @@ class subjectEditorView : View("Add Student View") {
                             borderColor += box(Color.WHITE)
                         }
                         useMaxWidth = true
-                    }.promptText = "Select the subject credits"
+                        promptText = "Select the subject credits"
+                    }
                 }
                 field() {
                     vboxConstraints {
                         paddingTop = 20.0
+                    }
+                    label {
+                        text = "Enter hours per week"
+                        style {
+                            textFill = Color.WHITE
+                        }
+                        maxWidth = 180.0
                     }
                     textfield(subjectEditorController.subjectHoursPerWeek) {
                         style {
@@ -184,11 +199,19 @@ class subjectEditorView : View("Add Student View") {
                             borderColor += box(Styles.mutedOrangeColor)
                         }
                         useMaxWidth = true
-                    }.promptText = "Enter hours per week"
+                        promptText = "Enter hours per week"
+                    }
                 }
                 field() {
                     vboxConstraints {
                         paddingTop = 20.0
+                    }
+                    label {
+                        text = "Enter price per month"
+                        style {
+                            textFill = Color.WHITE
+                        }
+                        maxWidth = 180.0
                     }
                     textfield(subjectEditorController.subjectPricePerMonth) {
                         style {

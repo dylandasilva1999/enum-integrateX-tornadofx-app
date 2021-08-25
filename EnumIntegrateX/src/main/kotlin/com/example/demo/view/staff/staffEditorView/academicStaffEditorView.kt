@@ -235,6 +235,13 @@ class academicStaffEditorView : View("Add Academic Staff View") {
                     vboxConstraints {
                         paddingTop = 20.0
                     }
+                    label {
+                        text = "Enter hours to work per week"
+                        style {
+                            textFill = Color.WHITE
+                        }
+                        maxWidth = 200.0
+                    }
                     textfield(academicStaffEditorController.academicStaffHours) {
                         style {
                             textFill = Styles.darkBlueColor
