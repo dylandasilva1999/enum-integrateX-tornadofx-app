@@ -261,16 +261,18 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                     }
                                     label(subjectModel.description) {
                                         vboxConstraints {
-                                            marginTop = 15.0
+                                            marginTop = 8.0
                                             marginLeft = 20.0
                                         }
                                         style {
                                             fontWeight = FontWeight.BOLD
                                             textFill = Color.WHITE
-                                            fontSize = 16.px
+                                            fontSize = 12.px
                                             fontFamily = "Source Sans Pro"
                                         }
-                                        maxWidth = 200.0
+                                        maxWidth = 300.0
+                                        maxHeight = 150.0
+                                        isWrapText = true
                                     }
                                 }
                             }
