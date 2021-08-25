@@ -5,6 +5,7 @@ import com.example.demo.controller.students.StudentsController
 import com.example.demo.model.Student
 import com.example.demo.model.StudentModel
 import com.example.demo.view.students.studentDetailsView.academicStaffDetailsView
+import com.example.demo.view.students.studentDetailsView.studentDetailsView
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*
@@ -39,7 +40,7 @@ class studentListItemView(val studentModel: StudentModel) : View("Student List I
         setInScope(studentModel, fragmentScope)
 
         fun changeView() {
-            this += find<academicStaffDetailsView>(fragmentScope)
+            this += find<studentDetailsView>(fragmentScope)
         }
 
         stackpane {
