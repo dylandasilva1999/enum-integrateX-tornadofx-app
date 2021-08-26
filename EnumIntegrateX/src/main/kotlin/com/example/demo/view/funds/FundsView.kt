@@ -324,6 +324,104 @@ class FundsView : View("Funds View") {
                     for (university in universityList) {
                         add(universityItemView(UniversityModel(university)))
                     }
+                    stackpane {
+                        stackpaneConstraints {
+                            paddingTop = 20.0
+                        }
+                        rectangle {
+                            arcHeight = 60.0
+                            arcWidth = 60.0
+                            width = 1460.0
+                            height = 130.0
+                            strokeWidth = 1.0
+                            fill = Styles.darkBlueColor
+                            opacity = 1.0
+                        }
+                        hbox {
+                            imageview("payment-icon.png") {
+                                hboxConstraints {
+                                    marginTop = 40.0
+                                    marginLeft = 50.0
+                                }
+                                fitHeight = 60.0
+                                fitWidth = 60.0
+                                isPreserveRatio = true
+                            }
+                            label("Incoming Tuition") {
+                                hboxConstraints {
+                                    marginTop = 50.0
+                                    marginLeft = 30.0
+                                }
+                                style {
+                                    fontWeight = FontWeight.NORMAL
+                                    textFill = Color.WHITE
+                                    fontSize = 24.px
+                                    fontFamily = "Source Sans Pro"
+                                }
+                            }
+                            label("+R2400000.0") {
+                                hboxConstraints {
+                                    marginTop = 40.0
+                                    marginLeft = 880.0
+                                }
+                                style {
+                                    fontWeight = FontWeight.BOLD
+                                    textFill = Color.WHITE
+                                    fontSize = 36.px
+                                    fontFamily = "Source Sans Pro"
+                                }
+                            }
+                        }
+                    }
+                    stackpane {
+                        stackpaneConstraints {
+                            paddingTop = 20.0
+                        }
+                        rectangle {
+                            arcHeight = 60.0
+                            arcWidth = 60.0
+                            width = 1460.0
+                            height = 130.0
+                            strokeWidth = 1.0
+                            fill = Styles.darkBlueColor
+                            opacity = 1.0
+                        }
+                        hbox {
+                            imageview("withdrawel-icon.png") {
+                                hboxConstraints {
+                                    marginTop = 40.0
+                                    marginLeft = 50.0
+                                }
+                                fitHeight = 60.0
+                                fitWidth = 60.0
+                                isPreserveRatio = true
+                            }
+                            label("Outgoing Salaries") {
+                                hboxConstraints {
+                                    marginTop = 50.0
+                                    marginLeft = 30.0
+                                }
+                                style {
+                                    fontWeight = FontWeight.NORMAL
+                                    textFill = Color.WHITE
+                                    fontSize = 24.px
+                                    fontFamily = "Source Sans Pro"
+                                }
+                            }
+                            label("-R2400000.0") {
+                                hboxConstraints {
+                                    marginTop = 40.0
+                                    marginLeft = 880.0
+                                }
+                                style {
+                                    fontWeight = FontWeight.BOLD
+                                    textFill = Color.WHITE
+                                    fontSize = 36.px
+                                    fontFamily = "Source Sans Pro"
+                                }
+                            }
+                        }
+                    }
                 }
                 universityList.onChange {
                     // Clear View
@@ -343,6 +441,104 @@ class FundsView : View("Funds View") {
                         }
                         for (university in universityList) {
                             add(universityItemView(UniversityModel(university)))
+                        }
+                        stackpane {
+                            stackpaneConstraints {
+                                paddingTop = 20.0
+                            }
+                            rectangle {
+                                arcHeight = 60.0
+                                arcWidth = 60.0
+                                width = 1460.0
+                                height = 130.0
+                                strokeWidth = 1.0
+                                fill = Styles.darkBlueColor
+                                opacity = 1.0
+                            }
+                            hbox {
+                                imageview("payment-icon.png") {
+                                    hboxConstraints {
+                                        marginTop = 40.0
+                                        marginLeft = 50.0
+                                    }
+                                    fitHeight = 60.0
+                                    fitWidth = 60.0
+                                    isPreserveRatio = true
+                                }
+                                label("Incoming Tuition") {
+                                    hboxConstraints {
+                                        marginTop = 50.0
+                                        marginLeft = 30.0
+                                    }
+                                    style {
+                                        fontWeight = FontWeight.NORMAL
+                                        textFill = Color.WHITE
+                                        fontSize = 24.px
+                                        fontFamily = "Source Sans Pro"
+                                    }
+                                }
+                                label("+R2400000.0") {
+                                    hboxConstraints {
+                                        marginTop = 40.0
+                                        marginLeft = 880.0
+                                    }
+                                    style {
+                                        fontWeight = FontWeight.BOLD
+                                        textFill = Color.WHITE
+                                        fontSize = 36.px
+                                        fontFamily = "Source Sans Pro"
+                                    }
+                                }
+                            }
+                        }
+                        stackpane {
+                            stackpaneConstraints {
+                                paddingTop = 20.0
+                            }
+                            rectangle {
+                                arcHeight = 60.0
+                                arcWidth = 60.0
+                                width = 1460.0
+                                height = 130.0
+                                strokeWidth = 1.0
+                                fill = Styles.darkBlueColor
+                                opacity = 1.0
+                            }
+                            hbox {
+                                imageview("withdrawel-icon.png") {
+                                    hboxConstraints {
+                                        marginTop = 40.0
+                                        marginLeft = 50.0
+                                    }
+                                    fitHeight = 60.0
+                                    fitWidth = 60.0
+                                    isPreserveRatio = true
+                                }
+                                label("Outgoing Salaries") {
+                                    hboxConstraints {
+                                        marginTop = 50.0
+                                        marginLeft = 30.0
+                                    }
+                                    style {
+                                        fontWeight = FontWeight.NORMAL
+                                        textFill = Color.WHITE
+                                        fontSize = 24.px
+                                        fontFamily = "Source Sans Pro"
+                                    }
+                                }
+                                label("-R2400000.0") {
+                                    hboxConstraints {
+                                        marginTop = 40.0
+                                        marginLeft = 880.0
+                                    }
+                                    style {
+                                        fontWeight = FontWeight.BOLD
+                                        textFill = Color.WHITE
+                                        fontSize = 36.px
+                                        fontFamily = "Source Sans Pro"
+                                    }
+                                }
+                            }
                         }
                     }
                 }
