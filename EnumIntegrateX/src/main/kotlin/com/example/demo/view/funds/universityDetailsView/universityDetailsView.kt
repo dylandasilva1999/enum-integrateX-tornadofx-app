@@ -1,6 +1,7 @@
 package com.example.demo.view.funds.universityDetailsView
 
 import com.example.demo.app.Styles
+import com.example.demo.controller.funds.FundsController
 import com.example.demo.model.StudentModel
 import com.example.demo.model.UniversityModel
 import javafx.scene.paint.Color
@@ -10,6 +11,8 @@ import tornadofx.*
 class universityDetailsView() : Fragment("University Details View") {
 
     val universityModel: UniversityModel by inject()
+    //Instance of fundsController
+    val fundsController: FundsController by inject()
 
     override val root = vbox {
 
@@ -97,7 +100,7 @@ class universityDetailsView() : Fragment("University Details View") {
                                         }
                                         minWidth = 50.0
                                     }
-                                    label("R${universityModel.poolFund.value}") {
+                                    label("R${fundsController.universityPoolFundTotal().value}") {
                                         vboxConstraints {
                                             marginTop = -8.0
                                             marginLeft = 20.0

@@ -39,6 +39,10 @@ class universityItemView(val universityModel: UniversityModel) : View("Universit
             this += find<universityDetailsView>(fragmentScope)
         }
 
+        fun updateNewPoolFund() {
+            fundsController.settlePayments().value
+        }
+
         stackpane {
             stackpaneConstraints {
                 paddingTop = 20.0

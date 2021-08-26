@@ -25,6 +25,10 @@ class FundsView : View("Funds View") {
     //Student List
     val universityList = fundsController.universityList
 
+    var universityPoolFund = fundsController.universityPoolFundTotal().value.toDouble()
+    val totalOutgoingFunds = fundsController.getTotalAdminStaffFees().value.toDouble() + fundsController.getTotalAcademicStaffFees().value.toDouble()
+    val totalIncomingFunds = fundsController.getTotalStudentFees().value.toDouble()
+
     //Root Layout
     override val root = hbox {
         style {
@@ -359,7 +363,7 @@ class FundsView : View("Funds View") {
                                     fontFamily = "Source Sans Pro"
                                 }
                             }
-                            label("+R2400000.0") {
+                            label("+${fundsController.incomingPayments().value.toString()}") {
                                 hboxConstraints {
                                     marginTop = 40.0
                                     marginLeft = 880.0
@@ -408,7 +412,7 @@ class FundsView : View("Funds View") {
                                     fontFamily = "Source Sans Pro"
                                 }
                             }
-                            label("-R2400000.0") {
+                            label("-${fundsController.outgoingPayments().value.toString()}") {
                                 hboxConstraints {
                                     marginTop = 40.0
                                     marginLeft = 880.0
@@ -419,6 +423,66 @@ class FundsView : View("Funds View") {
                                     fontSize = 36.px
                                     fontFamily = "Source Sans Pro"
                                 }
+                            }
+                        }
+                    }
+                    stackpane {
+                        stackpaneConstraints {
+                            paddingTop = 20.0
+                        }
+                        rectangle {
+                            arcHeight = 60.0
+                            arcWidth = 60.0
+                            width = 1460.0
+                            height = 130.0
+                            strokeWidth = 1.0
+                            fill = Color.TRANSPARENT
+                            opacity = 1.0
+                        }
+                        hbox {
+                            button("Close of the month") {
+                                hboxConstraints {
+                                    marginTop = 10.0
+                                    marginLeft = 1010.0
+                                }
+                                action {
+                                    fundsController.settlePayments()
+                                    println(fundsController.universityPoolFundTotal().value)
+                                }
+                                style {
+                                    fontSize = 20.px
+                                    borderWidth += box(1.5.px)
+                                    backgroundRadius += box(9.px)
+                                    fontFamily = "Source Sans Pro"
+                                    fontWeight = FontWeight.BOLD
+                                    textFill = Color.WHITE
+                                    backgroundColor = multi(Styles.orangeColor, Styles.orangeColor, Styles.orangeColor)
+                                }
+                                useMaxWidth = true
+                                paddingAll = 12.0
+                                paddingLeft = 30.0
+                                paddingRight = 30.0
+                            }
+                            button("Start new month") {
+                                hboxConstraints {
+                                    marginTop = 10.0
+                                    marginLeft = 20.0
+                                }
+                                action {
+                                }
+                                style {
+                                    fontSize = 20.px
+                                    borderWidth += box(1.5.px)
+                                    backgroundRadius += box(9.px)
+                                    fontFamily = "Source Sans Pro"
+                                    fontWeight = FontWeight.BOLD
+                                    textFill = Color.WHITE
+                                    backgroundColor = multi(Styles.yellowColor, Styles.yellowColor, Styles.yellowColor)
+                                }
+                                useMaxWidth = true
+                                paddingAll = 12.0
+                                paddingLeft = 30.0
+                                paddingRight = 30.0
                             }
                         }
                     }
@@ -477,7 +541,7 @@ class FundsView : View("Funds View") {
                                         fontFamily = "Source Sans Pro"
                                     }
                                 }
-                                label("+R2400000.0") {
+                                label("+${fundsController.incomingPayments().value.toString()}") {
                                     hboxConstraints {
                                         marginTop = 40.0
                                         marginLeft = 880.0
@@ -526,7 +590,7 @@ class FundsView : View("Funds View") {
                                         fontFamily = "Source Sans Pro"
                                     }
                                 }
-                                label("-R2400000.0") {
+                                label("-${fundsController.outgoingPayments().value.toString()}") {
                                     hboxConstraints {
                                         marginTop = 40.0
                                         marginLeft = 880.0
@@ -537,6 +601,65 @@ class FundsView : View("Funds View") {
                                         fontSize = 36.px
                                         fontFamily = "Source Sans Pro"
                                     }
+                                }
+                            }
+                        }
+                        stackpane {
+                            stackpaneConstraints {
+                                paddingTop = 20.0
+                            }
+                            rectangle {
+                                arcHeight = 60.0
+                                arcWidth = 60.0
+                                width = 1460.0
+                                height = 130.0
+                                strokeWidth = 1.0
+                                fill = Color.TRANSPARENT
+                                opacity = 1.0
+                            }
+                            hbox {
+                                button("Close of the month") {
+                                    hboxConstraints {
+                                        marginTop = 10.0
+                                        marginLeft = 1010.0
+                                    }
+                                    action {
+                                        fundsController.settlePayments()
+                                    }
+                                    style {
+                                        fontSize = 20.px
+                                        borderWidth += box(1.5.px)
+                                        backgroundRadius += box(9.px)
+                                        fontFamily = "Source Sans Pro"
+                                        fontWeight = FontWeight.BOLD
+                                        textFill = Color.WHITE
+                                        backgroundColor = multi(Styles.orangeColor, Styles.orangeColor, Styles.orangeColor)
+                                    }
+                                    useMaxWidth = true
+                                    paddingAll = 12.0
+                                    paddingLeft = 30.0
+                                    paddingRight = 30.0
+                                }
+                                button("Start new month") {
+                                    hboxConstraints {
+                                        marginTop = 10.0
+                                        marginLeft = 20.0
+                                    }
+                                    action {
+                                    }
+                                    style {
+                                        fontSize = 20.px
+                                        borderWidth += box(1.5.px)
+                                        backgroundRadius += box(9.px)
+                                        fontFamily = "Source Sans Pro"
+                                        fontWeight = FontWeight.BOLD
+                                        textFill = Color.WHITE
+                                        backgroundColor = multi(Styles.yellowColor, Styles.yellowColor, Styles.yellowColor)
+                                    }
+                                    useMaxWidth = true
+                                    paddingAll = 12.0
+                                    paddingLeft = 30.0
+                                    paddingRight = 30.0
                                 }
                             }
                         }
