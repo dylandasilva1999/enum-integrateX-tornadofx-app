@@ -42,7 +42,7 @@ class subjectDetailsView() : Fragment("Student Details View") {
                 arcHeight = 60.0
                 arcWidth = 60.0
                 width = 1460.0
-                height = 400.0
+                height = 420.0
                 strokeWidth = 1.0
                 fill = Styles.darkBlueColor
                 opacity = 1.0
@@ -241,7 +241,7 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                     arcHeight = 20.0
                                     arcWidth = 20.0
                                     width = 345.0
-                                    height = 115.0
+                                    height = 125.0
                                     strokeWidth = 1.0
                                     fill = subjectCardsColour()
                                     opacity = 1.0
@@ -285,7 +285,7 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                     arcHeight = 20.0
                                     arcWidth = 20.0
                                     width = 200.0
-                                    height = 115.0
+                                    height = 125.0
                                     strokeWidth = 1.0
                                     fill = subjectCardsColour()
                                     opacity = 1.0
@@ -305,7 +305,7 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                     }
                                     label(subjectModel.hoursPerWeek) {
                                         vboxConstraints {
-                                            marginTop = 15.0
+                                            marginTop = 20.0
                                             marginLeft = 20.0
                                         }
                                         style {
@@ -326,7 +326,7 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                     arcHeight = 20.0
                                     arcWidth = 20.0
                                     width = 200.0
-                                    height = 115.0
+                                    height = 125.0
                                     strokeWidth = 1.0
                                     fill = subjectCardsColour()
                                     opacity = 1.0
@@ -346,7 +346,7 @@ class subjectDetailsView() : Fragment("Student Details View") {
                                     }
                                     label("R${subjectModel.pricePerMonth.value}") {
                                         vboxConstraints {
-                                            marginTop = 15.0
+                                            marginTop = 20.0
                                             marginLeft = 20.0
                                         }
                                         style {

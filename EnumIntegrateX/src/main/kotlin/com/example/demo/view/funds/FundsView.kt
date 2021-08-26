@@ -2,11 +2,17 @@ package com.example.demo.view.funds
 
 import com.example.demo.app.Styles
 import com.example.demo.controller.funds.FundsController
+import com.example.demo.controller.students.StudentsController
+import com.example.demo.model.StudentModel
+import com.example.demo.model.University
+import com.example.demo.model.UniversityModel
 import com.example.demo.view.staff.StaffView
 import com.example.demo.view.students.StudentsView
 import com.example.demo.view.subjects.SubjectsView
 import com.example.demo.view.dashboard.DashboardView
+import com.example.demo.view.funds.universityItemView.universityItemView
 import com.example.demo.view.login.LoginView
+import com.example.demo.view.students.studentListItemView.studentListItemView
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
@@ -16,6 +22,8 @@ class FundsView : View("Funds View") {
 
     //Instance of fundsController
     val fundsController: FundsController by inject()
+    //Student List
+    val universityList = fundsController.universityList
 
     //Root Layout
     override val root = hbox {
@@ -279,6 +287,70 @@ class FundsView : View("Funds View") {
                     }
                 }
             }
+        }
+        vbox {
+            hbox {
+                hboxConstraints {
+                    alignment = Pos.CENTER_LEFT
+                }
+                useMaxWidth = true
+            }
+            vboxConstraints {
+                alignment = Pos.CENTER_LEFT
+            }
+            useMaxHeight = true
+            useMaxWidth = true
+            stackpane {
+                rectangle {
+                    width = 1480.0
+                    height = 920.0
+                    strokeWidth = 1.0
+                    fill = Color.TRANSPARENT
+                    opacity = 1.0
+                }
+                vbox {
+                    label("University Pool Fund") {
+                        vboxConstraints {
+                            marginTop = 0.0
+                            marginLeft = 12.0
+                        }
+                        style {
+                            fontWeight = FontWeight.BOLD
+                            textFill = Color.WHITE
+                            fontSize = 36.px
+                            fontFamily = "Source Sans Pro"
+                        }
+                    }
+                    for (university in universityList) {
+                        add(universityItemView(UniversityModel(university)))
+                    }
+                }
+                universityList.onChange {
+                    // Clear View
+                    this.clear()
+                    vbox {
+                        label("University Pool Fund") {
+                            vboxConstraints {
+                                marginTop = 0.0
+                                marginLeft = 12.0
+                            }
+                            style {
+                                fontWeight = FontWeight.BOLD
+                                textFill = Color.WHITE
+                                fontSize = 36.px
+                                fontFamily = "Source Sans Pro"
+                            }
+                        }
+                        for (university in universityList) {
+                            add(universityItemView(UniversityModel(university)))
+                        }
+                    }
+                }
+            }
+            paddingTop = 5.0
+            paddingLeft = 50.0
+            paddingRight = 50.0
+            paddingBottom = 50.0
         }
     }
 }

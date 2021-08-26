@@ -646,7 +646,7 @@ class DashboardView : View("Dashboard View") {
                                                 fontFamily = "Source Sans Pro"
                                             }
                                         }
-                                        label("R2 000 000.00") {
+                                        label("R${dashboardController.getTotalUniversityPoolFund().toString()}") {
                                             vboxConstraints {
                                                 marginTop = -10.0
                                                 marginLeft = 40.0

@@ -1,5 +1,6 @@
 package com.example.demo.controller.dashboard
 
+import com.example.demo.controller.funds.FundsController
 import com.example.demo.controller.staff.AcademicStaffController
 import com.example.demo.controller.staff.AdminStaffController
 import com.example.demo.controller.students.StudentsController
@@ -13,6 +14,7 @@ class DashboardController: Controller() {
     //Instance of academicStaffController & adminStaffController
     private val academicStaffController: AcademicStaffController by inject()
     private val adminStaffController: AdminStaffController by inject()
+    private val fundsController: FundsController by inject()
 
     //Instance of adminStaffList
     val adminStaffList = adminStaffController.adminStaffList
@@ -71,5 +73,18 @@ class DashboardController: Controller() {
             }
         }
         return totalAcademicStaff.toString()
+    }
+
+    //Function to get the amount of diploma students
+    fun getTotalUniversityPoolFund(): Double {
+
+        //Total diploma students initializer
+        var totalUniversityPoolFund: Double = 0.0
+
+        for (university in fundsController.universityList) {
+            totalUniversityPoolFund += university.poolFundProperty.value
+        }
+
+        return totalUniversityPoolFund
     }
 }

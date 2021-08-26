@@ -1,14 +1,53 @@
 package com.example.demo.view.searchbar
 
 import com.example.demo.app.Styles
+import com.example.demo.controller.students.StudentsController
+import com.example.demo.model.Student
+import com.example.demo.model.StudentModel
 import javafx.geometry.Orientation
 import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*
 
 //Search Bar Students
-class SearchBarViewStudents : View("Search Bar View Dashboard") {
+class SearchBarViewStudents : View("Search Bar View Students") {
+
+    //Instance of studentsController
+    val studentsController: StudentsController by inject()
+    //Student List
+    val studentList = studentsController.studentsList
+    //Student Model
+    val studentModel: StudentModel by inject()
+
+    val input: String = ""
+
     override val root = hbox {
+
+        fun searchStudent(input: String): Student {
+            var searchedStudent = Student(
+                studentModel.id.value,
+                studentModel.title.value,
+                studentModel.fullName.value,
+                studentModel.email.value,
+                studentModel.image.value,
+                studentModel.idNumber.value,
+                studentModel.credits.value,
+                studentModel.education.value,
+                studentModel.subjects.value,
+                studentModel.fees.value
+            )
+
+            for (student in studentList) {
+                if (input == studentModel.fullName.value || input == studentModel.idNumber.value) {
+                    searchedStudent = student
+                }
+                else {
+                    println("No Students")
+                }
+            }
+            return searchedStudent
+        }
+
         form {
             style {
                 fontSize = 20.px
@@ -20,7 +59,7 @@ class SearchBarViewStudents : View("Search Bar View Dashboard") {
             fieldset {
                 labelPosition = Orientation.HORIZONTAL
                 field() {
-                    textfield() {
+                    textfield(input) {
                         style {
                             textFill = Color.WHITE
                             backgroundColor = multi(
@@ -44,7 +83,7 @@ class SearchBarViewStudents : View("Search Bar View Dashboard") {
                 marginTop = 17.0
             }
             action {
-                //Action here
+                //searchStudent(input)
             }
             style {
                 fontSize = 20.px
@@ -154,7 +193,7 @@ class SearchBarViewStaff : View("Search Bar View Staff") {
                 marginTop = 17.0
             }
             action {
-                //Action here
+
             }
             style {
                 fontSize = 20.px
