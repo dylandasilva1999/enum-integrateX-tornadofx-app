@@ -14,6 +14,7 @@ class Styles : Stylesheet() {
         val yellowColor = c("#EFA25E", 1.0)
         val blueColor = c("#009DB8", 1.0)
         val mutedBlueColor = c("#B4E0E8", 0.8)
+        val darkerBlueColor = c("#007184", 1.0)
         val mutedDarkBlueColor = c("#252331", 1.0)
         val mutedOrangeColor = c("#FFDCD4", 1.0)
         val darkBlueColor = c("#171521", 1.0)

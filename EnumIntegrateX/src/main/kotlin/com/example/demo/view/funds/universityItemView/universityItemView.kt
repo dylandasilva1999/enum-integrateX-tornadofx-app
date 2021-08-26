@@ -23,6 +23,7 @@ class universityItemView(val universityModel: UniversityModel) : View("Universit
             universityModel.name.value,
             universityModel.poolFund.value,
             universityModel.image.value,
+            universityModel.description.value,
         )
         return selectedUniversity
     }

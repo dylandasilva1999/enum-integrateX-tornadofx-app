@@ -29,7 +29,7 @@ class universityDetailsView() : Fragment("University Details View") {
                 arcHeight = 60.0
                 arcWidth = 60.0
                 width = 1460.0
-                height = 400.0
+                height = 380.0
                 strokeWidth = 1.0
                 fill = Styles.blueColor
                 opacity = 1.0
@@ -45,6 +45,118 @@ class universityDetailsView() : Fragment("University Details View") {
                         textFill = Color.WHITE
                         fontSize = 26.px
                         fontFamily = "Source Sans Pro"
+                    }
+                }
+                imageview(universityModel.image) {
+                    vboxConstraints {
+                        marginTop = 30.0
+                        marginLeft = 60.0
+                    }
+                    fitHeight = 100.0
+                    fitWidth = 300.0
+                    isPreserveRatio = true
+                }
+                hbox {
+                    stackpane {
+                        stackpaneConstraints {
+                            paddingLeft = 60.0
+                            paddingTop = 15.0
+                        }
+                        rectangle {
+                            arcHeight = 20.0
+                            arcWidth = 20.0
+                            width = 450.0
+                            height = 150.0
+                            strokeWidth = 1.0
+                            fill = Styles.darkerBlueColor
+                            opacity = 1.0
+                        }
+                        vbox {
+                            hbox {
+                                imageview("fund-blue-icon.png") {
+                                    hboxConstraints {
+                                        marginTop = 50.0
+                                        marginLeft = 40.0
+                                    }
+                                    fitHeight = 60.0
+                                    fitWidth = 60.0
+                                    isPreserveRatio = true
+                                }
+                                vbox {
+                                    label("Total Balance") {
+                                        vboxConstraints {
+                                            marginTop = 45.0
+                                            marginLeft = 20.0
+                                        }
+                                        style {
+                                            fontWeight = FontWeight.NORMAL
+                                            textFill = Color.WHITE
+                                            fontSize = 16.px
+                                            fontFamily = "Source Sans Pro"
+                                            fill = Styles.mutedBlueColor
+                                        }
+                                        minWidth = 50.0
+                                    }
+                                    label("R${universityModel.poolFund.value}") {
+                                        vboxConstraints {
+                                            marginTop = -8.0
+                                            marginLeft = 20.0
+                                        }
+                                        style {
+                                            fontWeight = FontWeight.BOLD
+                                            textFill = Color.WHITE
+                                            fontSize = 48.px
+                                            fontFamily = "Source Sans Pro"
+                                        }
+                                        minWidth = 320.0
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    stackpane {
+                        stackpaneConstraints {
+                            paddingLeft = 15.0
+                            paddingTop = 15.0
+                        }
+                        rectangle {
+                            arcHeight = 20.0
+                            arcWidth = 20.0
+                            width = 890.0
+                            height = 150.0
+                            strokeWidth = 1.0
+                            fill = Styles.darkerBlueColor
+                            opacity = 1.0
+                        }
+                        vbox {
+                            label("Description") {
+                                vboxConstraints {
+                                    marginTop = 30.0
+                                    marginLeft = 40.0
+                                }
+                                style {
+                                    fontWeight = FontWeight.BOLD
+                                    textFill = Color.WHITE
+                                    fontSize = 14.px
+                                    fontFamily = "Source Sans Pro"
+                                }
+                            }
+                            label(universityModel.description) {
+                                vboxConstraints {
+                                    marginTop = 5.0
+                                    marginLeft = 40.0
+                                }
+                                style {
+                                    fontWeight = FontWeight.NORMAL
+                                    textFill = Color.WHITE
+                                    fontSize = 18.px
+                                    fontFamily = "Source Sans Pro"
+                                }
+                                maxWidth = 820.0
+                                maxHeight = 150.0
+                                isWrapText = true
+                            }
+                        }
                     }
                 }
             }
