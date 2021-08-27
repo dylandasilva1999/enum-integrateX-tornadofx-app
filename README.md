@@ -43,7 +43,6 @@
    * [Functionality](#functionality)
 * [Concept Process](#concept-process)
    * [Ideation](#ideation)
-   * [Wireframes](#wireframes)
    * [User-flow](#user-flow)
 * [Development Process](#development-process)
    * [Implementation](#implementation)
@@ -144,13 +143,9 @@ The `Conceptual Process` is the set of actions, activities and research that was
 <!--![image7][image7]-->
 <!--![image8][image8]-->
 
-### Wireframes
-
-<!--![image9][image9]-->
-
 ### User-flow
 
-<!--![image10][image10]-->
+<!--![image9][image9]-->
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
@@ -183,7 +178,7 @@ The `Development Process` is the technical implementations and functionality don
 <!-- MOCKUPS -->
 ## Mockups
 
-<!--![image11][image11]-->
+<!--![image10][image10]-->
 
 <!-- VIDEO DEMONSTRATION -->
 ## Video Demonstration
