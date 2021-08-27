@@ -47,7 +47,6 @@
    * [User-flow](#user-flow)
 * [Development Process](#development-process)
    * [Implementation](#implementation)
-   * [Peer Reviews](#peer-reviews)
 * [Mockups](#mockups)
 * [Video Demonstration](#video-demonstration)
 * [Roadmap](#roadmap)
@@ -67,6 +66,8 @@ Based on personal experience with interacting with university administration sys
 
 The importance of the role of administration according to an article by Pankaj Mishra, states that it is essentially the “backbone of an organization” (2014). They provide “motivation to the work force and make them realize the goals of the organization” (2014). The system needs to be as efficient and effective, but also functional in a manner that is super easy to understand.
 
+The final name I chose for my project is Enum IntegrateX. Enum is short for enumarated, which is a data type that consists of predefined values. The enum in the name is for all the data that is a part of the university system. The IntegrateX is for how easy the tool is to use alongside an existing system. The system will be focused on providing the best user experience, easy for the administrators to manage all the data. It will be a tool added to an existing software to use.
+
 Enum IntegrateX is a tool that aids the management of university administration. Making the workforce of the admins more efficient and effective.
 
 ### Built With
@@ -84,7 +85,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Ensure that you have the latest version of Android Studio installed on your machine. The Kotlin plugin will also be required.
+Ensure that you have the latest version of IntelliJ installed on your machine. The Kotlin plugin will also be required.
 
 ### How to install
 
@@ -104,21 +105,34 @@ Open the project in IntelliJ IDEA.
 
 ### Features
 
-### Features to be listed soon
-
-Features will be listed here in the near future.
-
 <!--![image2][image2]-->
+### Dashboard Design
+Full custom dashboard design, with a side bar menu and an your account section.
 
 <!--![image3][image3]-->
+### Students
+View a customised list of all students (degree & diploma) and their details, as well as add a new student.
 
 <!--![image4][image4]-->
+### Subjects
+View a customised list of all subjects and their details, as well as add a new subject.
+
+<!--![image5][image5]-->
+### Staff
+View a customised list of all staff members (academic & admin) and their details, as well as add a new staff member.
+
+<!--![image6][image6]-->
+### University Funds
+Manage the university pool funds with outgoing salaries & incoming student tuition fees.
 
 ### Functionality
 
-### Functionality to be listed soon
-
-Functionality will be listed here in the near future.
+* `Hbox` and `Vbox` for the layout ui design of the application.
+* `Hbox & Vbox Constraints` for further more specific layout and padding properties.
+* `Stackpane` and `Rectangle` used for creating view shapes with content inside them.
+* `Scrollpane` used for displaying the lists of students, subjects, and staff members.
+* `MVC design architecture` utilised to structure the project and scope of the application.
+* `ViewModel` utilised for each of the model classes and binding the data accordingly.
 
 <!-- CONCEPT PROCESS -->
 ## Concept Process
@@ -127,16 +141,16 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 ### Ideation
 
-<!--![image5][image5]-->
-<!--![image6][image6]-->
+<!--![image7][image7]-->
+<!--![image8][image8]-->
 
 ### Wireframes
 
-<!--![image7][image7]-->
+<!--![image9][image9]-->
 
 ### User-flow
 
-<!--![image8][image8]-->
+<!--![image10][image10]-->
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
@@ -145,27 +159,31 @@ The `Development Process` is the technical implementations and functionality don
 
 ### Implementation
 
+#### Highlights
+
+* Understanding and grasping `TornadoFx` as a framework.
+* Using `TornadoFx` to create the layouts and user interface design of my application.
+* Utilising the `MVC arhcitecture` for my project's structure and functionality.
+* The `UI design` of my application, alongside the user experience, giving it the best I could.
+* The `customised details design` of all the students, staff, and subjects.
+* Integrating `Kotlin` into the project for the main logic and functionality.
+
 #### Challenges
 
-Challenges will be listed here in the near future.
-
-### Peer Reviews
-
-The `Peer Reviews` were conducted by my fellow students and lecturer.
-
-#### Feedback
-
-Feedback will be listed here in the near future.
+* Integration of the `database` was a very big challenge with the structure my project took.
+* The `search functionality` with the customised list items I used in my project.
+* Understanding how all the `data links` to each other with the students, staff, and subjects.
 
 #### Future Changes
 
-Future developments will be listed here in the near future.
+* `Finish` integrating the `database`. Add full functional login system.
+* Having the `search functionality` working and add animations.
+* The ability to `add universities` to the system.
 
 <!-- MOCKUPS -->
 ## Mockups
 
-<!--![image9][image9]-->
-<!--![image10][image10]-->
+<!--![image11][image11]-->
 
 <!-- VIDEO DEMONSTRATION -->
 ## Video Demonstration
@@ -173,13 +191,6 @@ Future developments will be listed here in the near future.
 To see a run through of the application, click below:
 
 [View Demo]()
-
-<!-- PROMO VIDEO -->
-## Promo Video
-
-To see the promo video, click below:
-
-[View Promo Video]()
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -217,6 +228,7 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 ## Acknowledgements
 
 * My lecturer Christof Enslin
+* [TornadoFX Guide](https://edvin.gitbooks.io/tornadofx-guide/content/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!--[image1]: Images/Image1.png-->
