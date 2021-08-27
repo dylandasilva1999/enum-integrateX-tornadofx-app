@@ -178,7 +178,7 @@ The `Development Process` is the technical implementations and functionality don
 <!-- MOCKUPS -->
 ## Mockups
 
-<!--![image10][image10]-->
+![image10][image10]
 
 <!-- VIDEO DEMONSTRATION -->
 ## Video Demonstration
