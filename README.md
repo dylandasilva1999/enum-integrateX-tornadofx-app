@@ -57,7 +57,7 @@
 <!--PROJECT DESCRIPTION-->
 ## About the Project
 
-<!--![image1][image1]-->
+![image1][image1]
 
 ### Project Description
 
@@ -104,23 +104,23 @@ Open the project in IntelliJ IDEA.
 
 ### Features
 
-<!--![image2][image2]-->
+![image2][image2]
 ### Dashboard Design
 Full custom dashboard design, with a side bar menu and an your account section.
 
-<!--![image3][image3]-->
+![image3][image3]
 ### Students
 View a customised list of all students (degree & diploma) and their details, as well as add a new student.
 
-<!--![image4][image4]-->
+![image4][image4]
 ### Subjects
 View a customised list of all subjects and their details, as well as add a new subject.
 
-<!--![image5][image5]-->
+![image5][image5]-
 ### Staff
 View a customised list of all staff members (academic & admin) and their details, as well as add a new staff member.
 
-<!--![image6][image6]-->
+![image6][image6]
 ### University Funds
 Manage the university pool funds with outgoing salaries & incoming student tuition fees.
 
@@ -140,12 +140,12 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 ### Ideation
 
-<!--![image7][image7]-->
-<!--![image8][image8]-->
+![image7][image7]
+![image8][image8]
 
 ### User-flow
 
-<!--![image9][image9]-->
+![image9][image9]
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
@@ -226,7 +226,16 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 * [TornadoFX Guide](https://edvin.gitbooks.io/tornadofx-guide/content/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!--[image1]: Images/Image1.png-->
+[image1]: Images/Image1.png
+[image2]: Images/Image2.png
+[image3]: Images/Image3.png
+[image4]: Images/Image4.png
+[image5]: Images/Image5.png
+[image6]: Images/Image6.png
+[image7]: Images/Image7.png
+[image8]: Images/Image8.png
+[image9]: Images/Image9.png
+[image10]: Images/Image10.png
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/dylan-da-silva-72b56a20a/
