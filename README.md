@@ -24,7 +24,7 @@
       <a href="https://github.com/dylandasilva1999/enum-integrateX-tornadofx-app"><strong>Explore the docs »</strong></a>
    <br />
    <br />
-   <a href="">View Demo</a>
+   <a href="https://youtu.be/3B_rY9Lcwm4">View Demo</a>
     ·
     <a href="https://github.com/dylandasilva1999/enum-integrateX-tornadofx-app/issues">Report Bug</a>
     ·
@@ -64,7 +64,6 @@
 ## About the Project
 
 ![image1][image1]
-
 ### Project Description
 
 Based on personal experience with interacting with university administration systems, they were always to complicated to comprehend, in terms of the information architecture and the user flow. Therefore the importance of online learning and students who want to register must not be overlooked. 
