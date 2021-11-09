@@ -6,6 +6,8 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/dylandasilva1999/enum-integrateX-tornadofx-app?color=%23EFA25E)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dylandasilva1999/enum-integrateX-tornadofx-app?color=%23EFA25E)
 [![LinkedIn][linkedin-shield]][linkedin-url]
+[![Instagram][instagram-shield]][instagram-url]
+[![Behance][behance-shield]][behance-url]
 
 <h6 align="center">Dylan da Silva IDV 303</h6>
 <p align="center">
@@ -33,11 +35,11 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-* * [Project Description](#project-description)
+  * [Project Description](#project-description)
   * [Built with](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
-  * [How to install](#how-to-install)
+  * [Installation](#installation)
 * [Features and Functionality](#features-and-functionality)
    * [Features](#features)
    * [Functionality](#functionality)
@@ -45,9 +47,13 @@
    * [Ideation](#ideation)
    * [User-flow](#user-flow)
 * [Development Process](#development-process)
-   * [Implementation](#implementation)
-* [Mockups](#mockups)
-* [Video Demonstration](#video-demonstration)
+   * [Implementation Process](#implementation-process)
+        * [Highlights](#highlights)
+        * [Challenges](#challenges)
+   * [Future Implementation](#future-implementation)
+* [Final Outcome](#final-outcome)
+    * [Mockups](#mockups)
+    * [Video Demonstration](#video-demonstration)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
@@ -84,9 +90,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Ensure that you have the latest version of IntelliJ installed on your machine. The Kotlin plugin will also be required.
-
-### How to install
+Ensure that you have the latest version of [IntelliJ](https://www.jetbrains.com/idea/) installed on your machine. The [Kotlin](https://plugins.jetbrains.com/plugin/6954-kotlin) plugin will also be required.
 
 ### Installation
 Here are a couple of ways to clone this repo:
@@ -104,24 +108,24 @@ Open the project in IntelliJ IDEA.
 
 ### Features
 
-![image2][image2]
 ### Dashboard Design
+![image2][image2]
 Full custom dashboard design, with a side bar menu and an your account section.
 
-![image3][image3]
 ### Students
+![image3][image3]
 View a customised list of all students (degree & diploma) and their details, as well as add a new student.
 
-![image4][image4]
 ### Subjects
+![image4][image4]
 View a customised list of all subjects and their details, as well as add a new subject.
 
-![image5][image5]-
 ### Staff
+![image5][image5]
 View a customised list of all staff members (academic & admin) and their details, as well as add a new staff member.
 
-![image6][image6]
 ### University Funds
+![image6][image6]
 Manage the university pool funds with outgoing salaries & incoming student tuition fees.
 
 ### Functionality
@@ -152,7 +156,10 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 The `Development Process` is the technical implementations and functionality done in the backend of the application.
 
-### Implementation
+### Implementation Process
+
+#### Design Architecture
+`MVC` design architecture used for structuring Enum IntegrateX.
 
 #### Highlights
 
@@ -169,14 +176,16 @@ The `Development Process` is the technical implementations and functionality don
 * The `search functionality` with the customised list items I used in my project.
 * Understanding how all the `data links` to each other with the students, staff, and subjects.
 
-#### Future Changes
+#### Future Implementation
 
 * `Finish` integrating the `database`. Add full functional login system.
 * Having the `search functionality` working and add animations.
 * The ability to `add universities` to the system.
 
 <!-- MOCKUPS -->
-## Mockups
+## Final Outcome
+
+### Mockups
 
 ![image10][image10]
 
@@ -185,7 +194,7 @@ The `Development Process` is the technical implementations and functionality don
 
 To see a run through of the application, click below:
 
-[View Demo](https://youtu.be/3B_rY9Lcwm4)
+[View Demonstration](https://youtu.be/3B_rY9Lcwm4)
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -216,7 +225,7 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- LICENSE -->
 ## Contact
 
-* **Dylan da Silva** - [@dylandasilva.designs](https://www.instagram.com/dylandasilva.designs/) - 190082@virtualwindow.co.za
+* **Dylan da Silva** - [@dylandasilva.designs](https://www.instagram.com/dylandasilva.designs/) - dylandasilva.b@gmail.com
 * **Project Link** - https://github.com/dylandasilva1999/enum-integrateX
 
 <!-- ACKNOWLEDGEMENTS -->
@@ -239,3 +248,7 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/dylan-da-silva-72b56a20a/
+[instagram-shield]: https://img.shields.io/badge/-Instagram-black.svg?style=flat-square&logo=instagram&colorB=555
+[instagram-url]: https://www.instagram.com/dylandasilva.designs/
+[behance-shield]: https://img.shields.io/badge/-Behance-black.svg?style=flat-square&logo=behance&colorB=555
+[behance-url]: https://www.behance.net/dylandasilva_
